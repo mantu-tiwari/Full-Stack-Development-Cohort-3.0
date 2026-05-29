@@ -155,3 +155,27 @@ function mainRoad(wid, cb) {
 }
 mainRoad(80,footpath)
 
+// Missing topic done after revision
+// here function ke andar function hai to inner function lock hota hai usko access karne ka process is code me hai
+function parent1() {
+    console.log('this is Parent');
+    function child1() {
+        console.log('this is child');
+    }
+    return child1
+}
+parent1()()
+
+// nesting fumction
+function dada() {
+    console.log('I am dada');
+    function papa() {
+        console.log('I am papa');
+        function bacha() {
+            console.log('I am bacha');
+        }
+        return bacha
+    }
+    return papa
+}
+dada()()()
