@@ -562,6 +562,16 @@
 // console.log('The product after 20% discout is :', dis);
 
 // 9. Check whether a product is in stock. (not solved)
+const prod = {
+    name: 'laptop',
+    stock: 2,
+    price: 60000
+}
+if (prod.stock > 0){
+    console.log('In stock');
+}else{
+    console.log('out of stock');
+}
 
 // // 10. Calculate final bill after GST.
 // var b = 200
@@ -595,7 +605,15 @@ if (x.toLowerCase() == y.toLowerCase()){
     console.log('Not Equal');
 }
 
-// 6. Create a simple login validation system. (not solved)
+// 6. Create a simple login validation system.
+var userName = 'roman'
+var pass = 12345
+if (userName == 'roman' && pass === 12345){
+    console.log('Valid');
+}else{
+    console.log('Invalid');
+}
+
 
 // 7. Find whether a number is a 2-digit or 3-digit number.
 var num = 783
@@ -608,7 +626,47 @@ if (num>=10 && num<100){
 }
 
 // 8. Create a mini ATM balance checker.
+var balance = 5000
+var checkBalance = () => {
+    console.log('Your Balance is :', balance);
+}
+var withdraw = (a) => {
+    if (a <= balance){
+        console.log('withdraw successfully');
+        console.log('your current balance is :', balance-a);
+    }else{
+        console.log('Insufficient balance');
+    }
+}
+checkBalance()
+withdraw (1000)
 
+// 9. Simulate a traffic light system using switch.
+let signal = 'Red'
+switch (signal) {
+    case 'Green':
+        console.log('You can Cross');       
+        break;
+    case 'Red':
+        console.log('Stop');       
+        break;
+    case 'Yellow':
+        console.log('Pass Slowely');       
+        break;
+}
+
+// 10. Build a small marksheet generator using variables and conditionals.
+var student = 'Rohan'
+var mathMarks = 87
+var sciMarks = 96
+var sstMarks = 79
+var totalMarks = mathMarks+sciMarks+sstMarks 
+var percent = totalMarks/3
+console.log('Total Marks is :',totalMarks );
+console.log('Percentage is :',percent.toFixed(2),'%');
+
+
+// self Practice 
 console.log('hello' - 2);
 let sa = 5
 console.log(sa++);
