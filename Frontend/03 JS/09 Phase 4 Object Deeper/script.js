@@ -1,3 +1,5 @@
+// 'use strict'
+
 // This
 console.log(window);
 console.log(this);
@@ -95,7 +97,7 @@ const stu1 = {
 }
 stu1.getName()
 
-// call (function sharing)
+// call, Apply, Bind (function sharing)
 let student1 = {
     firstName: 'Rahul',
     lastName: 'Gupta',
@@ -156,6 +158,87 @@ const user = {
 user.__proto__ = company // don't do this because this will change the default prototype to assigned prototype which make the performance issue
 console.log(user);
 console.log(user.foundYear); // it inherit the property of company object 
+
+// *************************************** Self practice
+
+console.log('Self practice');
+console.log('Global this'); /* ************************** */
+console.log(this); // window
+
+console.log('function me this' ); /* ************************** */
+function show() {
+    console.log(this); //window
+}
+show()
+
+console.log('arrow function me this' ); /* ************************** */
+const sho = () => {
+    console.log(this); //window
+}
+sho()
+
+console.log('Method me this normal function');/* ************************** */
+const u = {
+    name: 'Rahul',
+    greet() {
+        console.log(this.name); // rahul
+    },
+    // greet: function() {
+    //     console.log(this.name); // rahul
+    // }
+}
+u.greet()
+
+console.log('Method me this arrow function');/* ************************** */
+const u1 = {
+    name: 'Rahul',
+    greet: () => {
+        console.log(this.name); // unidentified
+    }
+}
+u1.greet()
+
+console.log('example 2 Method me this arrow function'); /* ************************** */
+const u2 = {
+    name: 'Rohan',
+    hobby: ['Chess', 'Football'],
+    chal() {
+        this.hobby.forEach( (e) => {
+            console.log(`${this.name} plays ${e}`);
+        })
+    }
+}
+u2.chal()
+
+console.log("prototype concept");/* ************************** */
+console.log(Object.prototype == u2.__proto__);
+console.log(Object.prototype == u2.chal.__proto__.__proto__);
+console.log(Function.prototype == u2.chal.__proto__);
+console.log(Array.prototype.prototype == Function.prototype.prototype);
+console.log(Array.__proto__ == Function.__proto__);
+
+const a = [10,20,30,40]
+console.log(a);
+
+console.log('assigning prototype'); /* ************************** */
+const animal = {
+    name: 'Janwar',
+    eats: true,
+    walk(){
+        console.log("Animal chal raha hai");
+    }
+}
+var dog = {
+    food: 'Omnivorus',
+    sound: 'Bark',
+    isPet: true,
+}
+dog.__proto__ = animal  // isme dog me animal ke proto ko access kar payenge
+dog.walk()
+// animal.__proto__ = dog // isme animal me dog ke object ko acces kar payenge
+// console.log(animal.food); 
+// dog = Object.create(animal)
+// console.log(dog.eats);
 
 
 
