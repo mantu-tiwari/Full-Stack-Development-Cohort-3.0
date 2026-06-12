@@ -121,20 +121,20 @@
 //     console.log('Failed');
 // })
 
-// var result = new Promise((res,rej) => {
-//     let num = 6
-//     if(num<5 && num>=0){
-//         console.log('chl gya');
-//         res()
-//     }else{
-//         console.log('ruk gya');
-//         rej()
-//     }
-// }).then(() => {
-//     console.log('kaam done');
-// }).catch(() => {
-//     console.log('fail ho gaya');
-// })
+var result = new Promise((res,rej) => {
+    let num = 6
+    if(num<5 && num>=0){
+        console.log('chl gya');
+        res()
+    }else{
+        console.log('ruk gya');
+        rej()
+    }
+}).then(() => {
+    console.log('kaam done');
+}).catch(() => {
+    console.log('fail ho gaya');
+})
 
 
 
