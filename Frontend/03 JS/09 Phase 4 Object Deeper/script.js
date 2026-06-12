@@ -241,4 +241,16 @@ dog.walk()
 // console.log(dog.eats);
 
 
-
+class Biscuit {
+    constructor(name, price, isExpire){
+        this.name = name 
+        this.price = price
+    } 
+}
+function purchase(){
+    console.log('congrarulation you purchased', this.name);
+}
+Biscuit.prototype.purchase = purchase
+const b1 = new Biscuit('parle', 5, false)
+console.log(b1);
+b1.purchase()
