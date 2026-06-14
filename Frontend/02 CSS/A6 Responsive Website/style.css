@@ -35,14 +35,76 @@ html,body {
   height: 100%;
   width: 100%;
 }
+main{
+    background-color: #FBF9EB;
+    height: 150vh;
+    /* width: 100%; */
+}
 
 /********************************** Mobile first desing  */
 
+/* Nav Bar */
+header{
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    left: 0;
+    /* width: 100%; */
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* max-width: 100%; */
+    padding: 0.5rem 2rem ;
+    font-family: var(--reckless-font);
+    border: 1px solid black;
+    border-radius: 10px;
+    
+}
+.nav-left{
+    display: flex;
+    gap: 1rem;
+    width: 33vw;
+    
+}
+.nav-center img{
+    height: 2.5rem;
+}
+.nav-left a{
+    font-size: 1.3rem;
+}
+.nav-right{
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    gap: 1rem;
+    width: 33vw;
+    justify-content: end;
+}
+.nav-right a{
+    font-size: 0.8rem;
+}
+nav i{
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: block;
+}
+a{
+    text-decoration: none;
+    color: black;
+    display: none;
+}
 
 
 
 
 /***************************** For Laptop Media Quaries */
-@media (min-width: 1024px) {
-    
+@media (min-width: 900px) {
+    nav a{
+        display: block;
+    }
+    nav i{
+        display: none;
+    }
 }
