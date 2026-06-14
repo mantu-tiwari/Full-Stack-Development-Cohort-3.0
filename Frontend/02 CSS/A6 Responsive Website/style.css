@@ -37,13 +37,18 @@ html,body {
 }
 main{
     background-color: #FBF9EB;
-    height: 150vh;
+    /* height: 150vh; */
     /* width: 100%; */
+}
+.btn{
+    padding: 1rem 4rem;
+    border-radius: 2rem;
+    border: none;
 }
 
 /********************************** Mobile first desing  */
 
-/* Nav Bar */
+/********************** Nav Bar */
 header{
     padding: 1rem;
     position: sticky;
@@ -60,6 +65,7 @@ nav{
     font-family: var(--reckless-font);
     border: 1px solid black;
     border-radius: 10px;
+    background-color: #FFFEFB;
     
 }
 .nav-left{
@@ -96,15 +102,62 @@ a{
     display: none;
 }
 
+/*********************** Section 1 */
+.sec1{
+    background-image: url(https://www.twoleavestea.com/cdn/shop/files/matcha_mobile.png?v=1779455800&width=511);
+    background-position: center;
+    background-size: cover;
+    height: 90vh;
+    border-bottom: 1px solid black;
+    
+}
+.hero-text{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 1.5rem;
+    text-align: center;
+    padding: 1.2rem;
+    padding-top: 15rem;
+}
+.hero-text h1{
+    /* font-size: clamp(3.5rem, 3vw, 8rem); */
+    font-size: 4rem;
+    font-family: var(--reckless-font);
+    font-weight: 300;
+}
+.hero-text p{
+    font-size: 1.2rem;
+    font-weight: var(--figtree-font);
+    font-weight: 400;
+}
+.hero-text button{
+    font-size: 1.1rem;
+    background-color: var(--primary-blue);
+    color: white;
+}
+
 
 
 
 /***************************** For Laptop Media Quaries */
 @media (min-width: 900px) {
+    /* Nav Bar */
     nav a{
         display: block;
     }
-    nav i{
+    .nav-left i{
         display: none;
+    }
+    /* Section 1 */
+    .sec1{
+    background-image: url(https://www.twoleavestea.com/cdn/shop/files/cere-memorial_matcha_wide.png?v=1779304660&width=1280);
+    background-position: center;
+    background-size: cover;
+    }
+    .hero-text{
+        align-items: start;
+        text-align: start;
+        max-width: 40vw;
     }
 }
