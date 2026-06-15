@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body {
+  height: 100%;
+  width: 100%;
+}
+.container{
+    background-color: palevioletred;
+    height: 40%;
+    width: 40%;
+    margin: 10rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    height: 50%;
+    width: 50%;
+    background-color: lightsteelblue;
+    
+    border-radius: 1rem;
+}
