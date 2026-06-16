@@ -37,7 +37,7 @@ body.style.padding = '1rem'
 // ***************** Classes (classlist.add/remove/toggle/replace/exist)
 let clsHead = document.querySelector('.head')
 clsHead.innerHTML = 'ClassList'
-clsHead.style.backgroundColor = 'yellow'
+clsHead.style.backgroundColor = 'blue'
 clsHead.classList.replace('classes', 'new')
 clsHead.classList.remove('head')
 clsHead.classList.toggle('dark') // agar ye hai to remove kar dega nhi to add kar dega
@@ -66,6 +66,12 @@ glow.addEventListener('click', () => {
     }
 })
 
+// ********************** Self Revision
+// use of creatElement, createTextNode
+const h4 = document.createElement('h4')
+const text = document.createTextNode('dom')
+h4.appendChild(text)
+body.appendChild(h4)
 
 
 
