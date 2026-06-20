@@ -33,8 +33,7 @@ main{
   background-color: #FEEC41;
   border-radius: 1rem;
   position: absolute;
-  /* left: 0%;
-  top: 60%; */
+  border: 2px solid #FEEC41;
 }
 button {
   padding: 0.5rem 2rem;
