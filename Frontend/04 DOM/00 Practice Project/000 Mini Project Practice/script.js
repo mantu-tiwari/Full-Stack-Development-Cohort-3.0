@@ -1,5 +1,4 @@
 const body = document.body
-// ******************************* Easy
 
 // 1. Counter App
 const plus = document.querySelector('.plus')
@@ -66,4 +65,14 @@ togg.addEventListener('click', () => {
     }else{
         togg.style.justifyContent = 'flex-start'
     }
+})
+
+// 6. Accordion
+const outer = document.querySelector('.outer')
+const inner = document.querySelector('.inner')
+const arrow = document.querySelector('#drop')
+outer.addEventListener('click', () => {
+    inner.classList.toggle('hide')
+    drop.classList.toggle('ri-arrow-drop-right-line')
+
 })

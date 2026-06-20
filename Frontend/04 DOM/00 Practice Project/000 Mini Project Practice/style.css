@@ -36,3 +36,14 @@ html,body {
     background-color: white;
     border-radius: 50%;
 }
+.outer {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.outer i{
+    font-size: 1.8rem;
+}
+.hide{
+    display: none;
+}
