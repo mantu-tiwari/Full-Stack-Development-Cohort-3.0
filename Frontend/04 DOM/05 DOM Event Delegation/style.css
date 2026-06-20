@@ -33,7 +33,7 @@ main{
   background-color: #FEEC41;
   border-radius: 1rem;
   position: absolute;
-  border: 2px solid #FEEC41;
+  border: 2px solid #FF6060;
 }
 button {
   padding: 0.5rem 2rem;
@@ -43,4 +43,15 @@ button {
   font-size: 1rem;
   background-color: #D51C39;
   color: #FEEC41;
+}
+#overlay{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  color: #FEEC41;
+  background-color: rgba(0, 0, 0, 0.551);
+  position: absolute;
+  font-size: 2rem;
 }

@@ -12,6 +12,7 @@ const main = document.querySelector("main");
 const btn = document.querySelector("button");
 const p = document.querySelector("p");
 const box = document.createElement('div')
+const overlay = document.querySelector('#overlay')
 box.classList.add('box')
 let time = 0;
 let move;
@@ -37,6 +38,7 @@ btn.addEventListener("click", () => {
   }, 1000);
   setTimeout(() => {
     clearInterval(move);
+    overlay.style.display = 'flex'
     console.log("stopped");
   }, 10000);
 });
