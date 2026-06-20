@@ -11,10 +11,21 @@
 const main = document.querySelector("main");
 const box = document.querySelector(".box");
 const btn = document.querySelector("button");
+const p = document.querySelector('p')
 btn.addEventListener("click", () => {
-  const top = Math.floor(Math.random() * 90);
-  const left = Math.floor(Math.random() * 90);
-  box.style.left = left+'%'
-  box.style.top = top+'%'
+  let time = 1
+  const move = setInterval(() => {
+    p.innerHTML = `<p>Time : ${time++} sec </p>`
+    const top = Math.floor(Math.random() * 90);
+    const left = Math.floor(Math.random() * 90);
+    box.style.left = left+'%'
+    box.style.top = top+'%'
+  }, 1000);
+  setTimeout(() => {
+    clearInterval(move)
+    console.log('stopped');
+  }, 10000);
 });
+
+
 
