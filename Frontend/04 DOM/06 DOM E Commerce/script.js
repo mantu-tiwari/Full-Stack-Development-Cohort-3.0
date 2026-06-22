@@ -6,6 +6,7 @@ const formClass = document.querySelector(".form");
 const closeBtn = document.querySelector(".ri-close-circle-line");
 const form = document.querySelector("form");
 const inp = document.querySelector("input");
+const product = document.querySelector(".product");
 const productArr = [];
 
 createBtn.addEventListener("click", () => {
@@ -40,4 +41,18 @@ form.addEventListener("submit", (e) => {
   productArr.push(obj);
   console.log(productArr);
   form.reset();
+  product.innerHTML += `<div class="product-card">
+                <div class="pic">
+                    <img src= ${image} alt="">
+                </div>
+                <div class="text">
+                    <h3>Name: ${productName}</h3>
+                    <h5>Price: ${price}</h5>
+                    <p>Description: ${description}</p>
+                </div>
+                <div class="btns">
+                    <button class="update">Update</button>
+                    <button class="delete">Delete</button>
+                </div>
+            </div>`;
 });
