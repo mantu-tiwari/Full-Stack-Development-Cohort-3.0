@@ -79,6 +79,34 @@ createInp.addEventListener('input',() => {
     createP.textContent = createInp.value
 })
 
+// Play with JSON File
+const h3 = document.querySelector('h3')
+const data = [
+  {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "age": 28
+  },
+  {
+    "id": 2,
+    "name": "Sarah Wilson",
+    "email": "sarah.wilson@example.com",
+    "age": 24
+  },
+  {
+    "id": 3,
+    "name": "Michael Brown",
+    "email": "michael.brown@example.com",
+    "age": 32
+  }
+]
+h3.addEventListener('click', () => {
+    console.log("let's play with json");
+})
+data.forEach((e,i) => {
+    console.log(e);
+})
 
 
 
