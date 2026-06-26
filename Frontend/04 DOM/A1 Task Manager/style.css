@@ -1,74 +1,87 @@
-:root{
-    --secondary-color : #BFDDF0;
-    --primary-color : #003edb;
-    --bg-color : #F8F9F9;
-    --btn-padding : 0.5rem 1.5rem;
+:root {
+  --secondary-color: #bfddf0;
+  --primary-color: #003edb;
+  --bg-color: #f8f9f9;
+  --btn-padding: 0.5rem 1.5rem;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-html, body {
+html,
+body {
   width: 100%;
   min-height: 100vh;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 }
-main{
-    background-color: var(--bg-color);
-    min-height: 100vh;
-    padding: 1.5rem;
-    position: relative;
+main {
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  padding: 1.5rem;
+  position: relative;
 }
-.dark{
-    background-color: black;
-    color: white;
+.dark {
+  background-color: black;
+  color: white;
 }
 
 /* Nav Bar */
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--secondary-color);
-    padding: 1rem 2rem;
-    border-radius: 1rem;
-    margin-bottom: 1rem;
-    color: #003edb
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--secondary-color);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  color: #003edb;
 }
-.dark-mode i{
-    font-size: 1.5rem;
-    cursor: pointer;
-    border-radius: 50%;
-    padding: 0.2rem;
-    border: 3px solid var(--primary-color);
+.dark-mode i {
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0.2rem;
+  border: 3px solid var(--primary-color);
 }
 
 /* Create Button */
-.create-btn{
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 2rem 0;
+.create-btn {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
 }
-.create-btn button{
-    font-size: 1.5rem;
-    padding: 0.5rem 2rem;
-    border-radius: 2rem;
-    background-color: var(--primary-color);
-    font-weight: 600;
-    border: none;
-    color: white;
-    cursor: pointer;
+.create-btn button {
+  font-size: 1.5rem;
+  padding: 0.5rem 2rem;
+  border-radius: 2rem;
+  background-color: var(--primary-color);
+  font-weight: 600;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
 /* Task container Section */
-.task-container{
-    background-color: white;
-    border-radius: 2rem;
-    padding-bottom: 2rem;
+.task-container {
+  background-color: white;
+  border-radius: 2rem;
+  padding-bottom: 2rem;
+  min-height: 50vh;
 }
-.task-container .top{
+/* .task-container .top{
     display: flex;
     justify-content: space-around;
     padding: 2rem 1rem;
@@ -80,107 +93,112 @@ nav{
     outline: none;
     font-size: 1rem;
 }
+.search-box button{
+    font-size: 1rem;
+    padding: 0.3rem 1.3rem;
+    border-radius: 1rem;
+    font-weight: 900;
+}
 .top h4{
     font-size: 1.5rem;
-
+} */
+.task-container .bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: var(--btn-padding);
+  padding-top: 1rem;
 }
-.task-container .bottom{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: var(--btn-padding);
-    padding-top:1rem;
+.task-container .task {
+  border: 2px solid var(--primary-color);
+  border-radius: 1rem;
+  padding: 1rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
-.task-container .task{
-    border: 2px solid var(--primary-color);
-    border-radius: 1rem;
-    padding: 1rem 5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+.task-btn button {
+  font-size: 1rem;
+  padding: var(--btn-padding);
+  border-radius: 2rem;
+  font-weight: 600;
+  cursor: pointer;
 }
-.task-btn button{
-    font-size: 1rem;
-    padding: var(--btn-padding);
-    border-radius: 2rem;
-    font-weight: 600;
-    cursor: pointer;
+.edit {
+  background-color: #f8fafe;
+  color: #688af0;
+  border: 2px solid #688af0;
 }
-.edit{
-    background-color: #F8FAFE;
-    color: #688AF0;
-    border: 2px solid #688AF0;
+.complete {
+  background-color: #f0f9f2;
+  color: #1c9433;
+  border: 2px solid #1c9433;
 }
-.complete{
-    background-color: #F0F9F2;
-    color: #1C9433;
-    border: 2px solid #1C9433;
-}
-.delete{
-    background-color: #FEF2F1;
-    color: #F81F19;
-    border: 2px solid #F81F19;
+.delete {
+  background-color: #fef2f1;
+  color: #f81f19;
+  border: 2px solid #f81f19;
 }
 .completed {
-    opacity: 0.5;
+  opacity: 0.5;
 }
-.completed h3{
-    text-decoration: line-through;
+.completed h3 {
+  text-decoration: line-through;
 }
 
 /* Form */
-.form{
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: var(--bg-color);
-    width: 100%;
-    height: 100vh;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 1rem;
+.form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--bg-color);
+  width: 100%;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
 }
-.form i{
-    font-size: 2rem;
-    color: #F81F19;
-    cursor: pointer;
+.form i {
+  font-size: 2rem;
+  color: #f81f19;
+  cursor: pointer;
 }
-form{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    background-color: white;
-    padding: 2rem;
-    border-radius: 1rem;
-    font-size: 1.2rem;
-    font-weight: 500;
-    border: 4px solid var(--primary-color);
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 4px solid var(--primary-color);
 }
-form input{
-    padding: var(--btn-padding);
-    border-radius: 1.5rem;
-    outline: none;
-    border: non;
-    font-size: 1rem;
+form input {
+  padding: var(--btn-padding);
+  border-radius: 1.5rem;
+  outline: none;
+  border: non;
+  font-size: 1rem;
 }
-form select{
-    padding: var(--btn-padding);
-    border-radius: 1.5rem;
-    outline: none;
-    font-size: 1rem;
-    cursor: pointer;
+form select {
+  padding: var(--btn-padding);
+  border-radius: 1.5rem;
+  outline: none;
+  font-size: 1rem;
+  cursor: pointer;
 }
-form button{
-    font-size: 1.5rem;
-    padding: 0.5rem 2rem;
-    border-radius: 2rem;
-    background-color: var(--primary-color);
-    font-weight: 600;
-    border: none;
-    color: white;
-    cursor: pointer;
+form button {
+  font-size: 1.5rem;
+  padding: 0.5rem 2rem;
+  border-radius: 2rem;
+  background-color: var(--primary-color);
+  font-weight: 600;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
