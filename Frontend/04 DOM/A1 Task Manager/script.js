@@ -35,14 +35,16 @@ darkMode.addEventListener('click',() => {
 let ui = () => {
     container.innerHTML = ''
     taskArr.forEach((e,i) => {
-        container.innerHTML += `<div class="task">
+        container.innerHTML += `<div class="task ${e.completed ? 'completed' : ''}">
             <div class="task-text">
               <h3>Task: ${e.task}</h3>
               <p>Category: ${e.category}</p>
             </div>
             <div class="task-btn">
               <button onClick="updateTask('${e.task}')" class="edit">Edit</button>
-              <button class="complete">Complete</button>
+              <button onClick="completeTask(${i})" class="complete">
+                ${e.completed ? 'Completed ✓' : 'Complete'}
+              </button>
               <button onClick="deleteTask(${i})" class="delete">Delete</button>
             </div>
           </div>`
@@ -66,7 +68,8 @@ form.addEventListener('submit',(e) => {
     let obj = {
         task,
         description,
-        category
+        category,
+        completed: false
     }
     if(updateIdx !== null){
         taskArr[updateIdx] = obj
@@ -99,6 +102,11 @@ const updateTask = (task) => {
 
 const deleteTask = (index) => {
     taskArr.splice(index,1)
+    ui()
+}
+
+const completeTask = (i) => {
+    taskArr[i].completed = !taskArr[i].completed;
     ui()
 }
 
