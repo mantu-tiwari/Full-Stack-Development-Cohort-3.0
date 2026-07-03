@@ -1,18 +1,2 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html, body {
-  width: 100%;
-  min-height: 100vh;
-}
-.red {
-  color: goldenrod;
-}
-.text-xl{
-  font-size: 50px;
-}
-.background{
-  background-color: #2055DA;
-}
+@import 'tailwindcss'
+
