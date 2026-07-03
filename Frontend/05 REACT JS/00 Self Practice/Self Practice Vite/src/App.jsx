@@ -1,5 +1,6 @@
 import About from './About.jsx'
 import Counter from './component/Counter.jsx'
+import Welcome from './component/Welcome.jsx'
 
 let App = () => {
 
@@ -9,6 +10,7 @@ let App = () => {
       <h4>This is App.jsx function component</h4>
       <About class='inherited' id='virtual' />
       <Counter/>
+      <Welcome/>
       {/* {About('mantu')} */}
     </div>
   )
