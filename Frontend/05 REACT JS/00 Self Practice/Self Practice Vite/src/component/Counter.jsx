@@ -6,13 +6,27 @@ const Counter = () => {
 
   return (
     <div>
-      <h3>Count : {count}</h3>
+      <h3 style={{color: count<0 ? 'red' : 'green'}} >Count : {count}</h3>
       <button
         onClick={() => {
           setCount(count + 1)
         }}
       >
-        Click
+        Increase
+      </button>
+      <button
+        onClick={() => {
+          setCount(count - 1)
+        }}
+      >
+        Decrease
+      </button>
+      <button
+        onClick={() => {
+          setCount(count = 0)
+        }}
+      >
+        Reset
       </button>
     </div>
   );
