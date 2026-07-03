@@ -1,5 +1,6 @@
 import React from "react";
 import Counter from "./Counter";
+import ProductCard from "./ProductCard";
 // import './App.css'
 
 const App = () => {
@@ -280,6 +281,12 @@ const App = () => {
   return (
     <div>
       <h1 className="text-4xl">Hey Rendering...</h1>
+      <div className="flex flex-wrap p-3 gap-2">
+        {productData.map((e,i) => {
+          // console.log(e);
+            return <ProductCard product={e} />
+        })}
+      </div>
       {/* <h1 className='text-6xl bg-amber-300 font-bold' >hello</h1>
       <h3 className='text-3xl bg-red-400 font-semibold' >Testing</h3> */}
       {/* <Counter/> */}
