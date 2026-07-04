@@ -39,13 +39,14 @@ body {
 
 /* Aside  */
 aside {
+    white-space: nowrap;
   height: 100vh;
   width: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2rem;
-  border: 1px solid black;
+  padding: 2rem 1rem;
+  border: 2px solid var(--white-shade);
   position: sticky;
   top: 0;
   left: 0;
@@ -105,4 +106,49 @@ aside {
   background-color: var(--dark-blue);
   border: none;
   color: white;
+}
+
+main{
+    padding: 2rem;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--white-shade);
+}
+.hero-txt{
+    padding: 1rem 0;
+}
+.summary-card{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+    padding: 1rem 0;
+}
+.cards{
+    width: 20%;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    background-color: white;
+}
+.cards i{
+    padding: 1rem;
+    border-radius: var(--radius);
+}
+.cards p{
+    padding: 1rem 0;
+}
+.cards:nth-child(1) i{
+    color: var(--dark-blue);
+    background-color: var(--light-blue);
+}
+.cards:nth-child(2) i{
+    color: var(--dark-green);
+    background-color: var(--light-green);
+}
+.cards:nth-child(3) i{
+    color: var(--dark-red);
+    background-color: var(--light-red);
+}
+.cards:nth-child(4) i{
+    color: var(--dark-blue);
+    background-color: var(--light-blue);
 }
