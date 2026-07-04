@@ -5,90 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fintrack Pro</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="https://kit.fontawesome.com/90bf4f9655.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/90bf4f9655.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
       rel="stylesheet"
     />
   </head>
   <body>
-    <main>
-
-      <!----------------------------------------- Aside  -->
-      <aside>
-        <div class="top">
-          <div class="logo">
-            <div class="icon">
-              <i class="ri-funds-fill"></i>
-            </div>
-            <div class="text">
-              <h2>FinTrack Pro</h2>
-              <p>Enterprise Finance</p>
-            </div>
-            <div class="functionality">
-              <div class="dashboard">
-                <i class="ri-dashboard-line"></i>
-                <h2>Dashboard</h2>
-              </div>
-              <div class="setting">
-                <i class="ri-settings-line"></i>
-                <h2>Setting</h2>
-              </div>
-            </div>
+    <!----------------------------------------- Aside  -->
+    <aside>
+      <div class="top">
+        <div class="logo">
+          <div class="icon">
+            <i class="ri-funds-fill"></i>
+          </div>
+          <div class="text">
+            <h2>FinTrack Pro</h2>
+            <p>Enterprise Finance</p>
           </div>
         </div>
-        <div class="bottom">
-          <button class="transaction-btn">
-            <h3><span>+</span> Add Transaction</h3>
-          </button>
+        <div class="functionality">
+          <div class="dashboard">
+            <i class="ri-dashboard-line"></i>
+            <h3>Dashboard</h3>
+          </div>
+          <div class="setting">
+            <i class="ri-settings-line"></i>
+            <h3>Setting</h3>
+          </div>
         </div>
-      </aside>
+      </div>
+      <div class="bottom">
+        <button class="transaction-btn">
+          <h3><span>+</span> Add Transaction</h3>
+        </button>
+      </div>
+    </aside>
 
+    <main>
       <!-- Section 1 -->
-       <section class="sec-1">
+      <section class="sec-1">
         <div class="hero-txt">
-            <h1>Financial Overview</h1>
-            <p>Real-time tracking application</p>
+          <h1>Financial Overview</h1>
+          <p>Real-time tracking application</p>
         </div>
         <div class="summary-card">
-            <div class="balance">
-                <i class="fa-solid fa-building-columns"></i>
-                <h4>Current Balance</h4>
-                <h2>amount</h2>
-            </div>
-            <div class="income">
-                <i class="fa-solid fa-arrow-trend-up"></i>
-                <h4>Current Balance</h4>
-                <h2>amount</h2>
-            </div>
-            <div class="expense">
-                <i class="fa-solid fa-arrow-trend-down"></i>
-                <h4>Current Balance</h4>
-                <h2>amount</h2>
-            </div>
-            <div class="total">
-                <i class="fa-solid fa-piggy-bank"></i>
-                <h4>Current Balance</h4>
-                <h2>amount</h2>
-            </div>
+          <div class="balance">
+            <i class="fa-solid fa-building-columns"></i>
+            <h4>Current Balance</h4>
+            <h2>amount</h2>
+          </div>
+          <div class="income">
+            <i class="fa-solid fa-arrow-trend-up"></i>
+            <h4>Current Balance</h4>
+            <h2>amount</h2>
+          </div>
+          <div class="expense">
+            <i class="fa-solid fa-arrow-trend-down"></i>
+            <h4>Current Balance</h4>
+            <h2>amount</h2>
+          </div>
+          <div class="total">
+            <i class="fa-solid fa-piggy-bank"></i>
+            <h4>Current Balance</h4>
+            <h2>amount</h2>
+          </div>
         </div>
-       </section>
+      </section>
 
-       <!-- Section 2 - Cash flow Chart -->
-        <section class="sec-2">
-            <div class="cashflow">
-                <h2>Cash Flow Analysis</h2>
-                <div class="graph"></div>
-            </div>
-            <div class="preferences">
-                <h2>Preferences</h2>
-                <div class="dark-mode">
-                    <div class="circle"></div>
-                </div>
-                <button class="reset-btn">Reset All Data</button>
-            </div>
-        </section>
+      <!-- Section 2 - Cash flow Chart -->
+      <section class="sec-2">
+        <div class="cashflow">
+          <h2>Cash Flow Analysis</h2>
+          <div class="graph"></div>
+        </div>
+        <div class="preferences">
+          <h2>Preferences</h2>
+          <div class="dark-mode">
+            <div class="circle"></div>
+          </div>
+          <button class="reset-btn">Reset All Data</button>
+        </div>
+      </section>
 
+      <!-- Section 3 - Transaction Details -->
+      <section class="sec-3">
+        <h2>All Transaction</h2>
+        <div class="operation">
+          <input type="text" placeholder="Search Transaction..." />
+          <select name="" id="">
+            <option value="All Type">All Type</option>
+            <option value="Income Only">Income Only</option>
+            <option value="Expense Only">Expense Only</option>
+          </select>
+        </div>
+      </section>
     </main>
     <script src="script.js"></script>
   </body>
