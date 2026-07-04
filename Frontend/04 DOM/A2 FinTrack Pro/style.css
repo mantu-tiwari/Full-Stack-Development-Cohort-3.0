@@ -69,6 +69,10 @@ aside {
 .text h2 {
   font-size: var(--md-heading);
 }
+aside h3{
+    font-weight: 500;
+    font-size: 1rem;
+}
 .dashboard {
   display: flex;
   align-items: center;
@@ -80,8 +84,8 @@ aside {
   border-radius: var(--radius);
   color: var(--dark-blue);
 }
-.dashboard i {
-  font-size: 1.5rem;
+aside i {
+  font-size: 1.2rem;
 }
 .setting {
   display: flex;
@@ -96,9 +100,6 @@ aside {
   border-radius: var(--radius);
   color: var(--dark-blue);
   transition: all ease 0.2s;
-}
-.setting i {
-  font-size: 1.5rem;
 }
 .transaction-btn {
   padding: 0.8rem 2rem;
@@ -286,8 +287,6 @@ main{
 
 /* Add Transaction Form */
 .form-section{
-    /* height: 100vh;
-    width: 100%; */
     width: 30%;
     position: absolute;
     display: flex;
