@@ -286,10 +286,18 @@ main{
 }
 
 /* Add Transaction Form */
+.form-bg{
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.4);
+    backdrop-filter: blur(3px);
+    position: absolute;
+    display: none;
+}
 .form-section{
     width: 30%;
     position: absolute;
-    display: flex;
+    display: none;
     top: 50vh;
     left: 50%;
     transform: translate(-50%, -50%);
