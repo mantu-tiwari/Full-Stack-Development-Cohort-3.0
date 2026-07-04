@@ -35,6 +35,7 @@ body {
   width: 100%;
   min-height: 100vh;
   display: flex;
+  position: relative;
 }
 
 /* Aside  */
@@ -267,7 +268,7 @@ main{
     width: 20%;
     padding: 0.2rem 0.5rem;
     border-radius: var(--radius);
-    border: none;d
+    border: none;
 }
 .detail-card div{
     width: 20%;
@@ -282,3 +283,54 @@ main{
     color: var(--dark-red);
     cursor: pointer;
 }
+
+/* Add Transaction Form */
+.form-section{
+    /* height: 100vh;
+    width: 100%; */
+    width: 30%;
+    position: absolute;
+    display: flex;
+    top: 50vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 2rem;
+    border-radius: var(--radius);
+    border: 1px solid black;
+    background-color: lightcyan;
+}
+.form-head{
+    width: 100%;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.form-head i{
+    font-size: 1.5rem;
+    color: var(--dark-red);
+    cursor: pointer;
+}
+.form-section form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+form input, select,button{
+    padding: 0.5rem;
+    border-radius: var(--radius);
+    border: none;
+}
+form button{
+    background-color: var(--dark-blue);
+    color: white    ;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+

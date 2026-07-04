@@ -23,11 +23,11 @@
         </div>
         <div class="functionality">
           <div class="dashboard">
-            <i class="ri-dashboard-line"></i>
+            <i class="fa-solid fa-border-all"></i>
             <h3>Dashboard</h3>
           </div>
           <div class="setting">
-            <i class="ri-settings-line"></i>
+            <i class="fa-solid fa-gear"></i>
             <h3>Setting</h3>
           </div>
         </div>
@@ -120,6 +120,38 @@
         </div>
       </section>
     </main>
+
+    <div class="form-section">
+        <div class="form-head">
+            <h2>Add Transaction</h2>
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <form>
+            <label for="type">Type</label>
+            <select name="source of income" id="type">
+                <option value="Expense">Expense</option>
+                <option value="Income">Income</option>
+            </select>
+            <label for="Description">Description</label>
+            <input id="Description" type="text" placeholder="Eg. Amazon, Salary, Coffee">
+            <label for="Amount">Amount</label>
+            <input id="Amount" type="number">
+            <label for="Date">Date</label>
+            <input id="Date" type="date">
+            <label for="Category">Category</label>
+            <select name="Spent Category" id="Category">
+                <option value="Others">Others</option>
+                <option value="Food Dining">Food Dining</option>
+                <option value="Recharge Bills">Recharge Bills</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Utility">Utility</option>
+                <option value="Salary">Salary</option>
+                <option value="Entertenment">Entertenment</option>
+            </select>
+            <button>Save Transaction</button>
+        </form>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
