@@ -168,14 +168,15 @@ main{
 }
 .preferences{
     background-color: white;
-    min-height: 25vh;
+    /* min-height: 25vh; */
+    height: fit-content;
     width: 30%;
     padding: 1rem;
     border-radius: var(--radius);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
 }
 .dark-mode{
     display: flex;
@@ -199,7 +200,6 @@ main{
     width: 1rem;
     border-radius: 50%;
     background-color: white;
-
 }
 .reset-btn{
     border: 1px solid var(--dark-red);
@@ -209,4 +209,76 @@ main{
     background-color: var(--light-red);
     font-weight: 600;
     color: var(--dark-red);
+}
+
+/* Section 3 */
+.sec-3{
+    background-color: white;
+    border-radius: var(--radius);
+    padding: 1rem;
+    width: 70%;
+}
+.sec-3 h2{
+    padding: 1rem 0;
+}
+.operation{
+    display: flex;
+    gap: 1rem;
+}
+.operation input{
+    width: 30%;
+    padding: 0.5rem 2rem;
+    border: 1px solid gray;
+    background-color: var(--white-shade);
+    border-radius: var(--radius);
+}
+.operation select{
+    border: 1px solid gray;
+    width: 70%;
+    background-color: var(--white-shade);
+    padding: 0.5rem 2rem;
+    border-radius: var(--radius);
+}
+.headings{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid gray;
+    gap: 3rem;
+}
+.headings h4{
+    font-weight: 500;
+    color: grey;
+    width: 20%;
+}
+.detail-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--white-shade);
+    gap: 3rem;
+    border-bottom: 1px solid var(--white-shade);
+}
+.detail-card h4{
+    width: 20%;
+}
+.detail-card button{
+    width: 20%;
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius);
+    border: none;d
+}
+.detail-card div{
+    width: 20%;
+    display: flex;
+    gap: 1rem;
+}
+.detail-card i:nth-child(1){
+    color: var(--dark-green);
+    cursor: pointer;
+}
+.detail-card i:nth-child(2){
+    color: var(--dark-red);
+    cursor: pointer;
 }
