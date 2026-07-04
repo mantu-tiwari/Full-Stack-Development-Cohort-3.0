@@ -119,8 +119,7 @@ main{
 }
 .summary-card{
     display: flex;
-    gap: 1rem;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 1rem 0;
 }
 .cards{
@@ -151,4 +150,63 @@ main{
 .cards:nth-child(4) i{
     color: var(--dark-blue);
     background-color: var(--light-blue);
+}
+
+/* Section 2 */
+.sec-2{
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.cashflow{
+    background-color: white;
+    min-height: 50vh;
+    width: 70%;
+    border-radius: var(--radius);
+    padding: 1rem;
+}
+.preferences{
+    background-color: white;
+    min-height: 25vh;
+    width: 30%;
+    padding: 1rem;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+.dark-mode{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+.toggle{
+    height: 1.5rem;
+    width: 3rem;
+    border-radius: 2rem;
+    background-color: rgb(183, 183, 183);
+    display: flex;
+    justify-content: start;
+    padding: 0.2rem 0.3rem;
+    align-items: center;
+    cursor: pointer;
+}
+.toggle-btn{
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color: white;
+
+}
+.reset-btn{
+    border: 1px solid var(--dark-red);
+    padding: 0.5rem 5rem;
+    cursor: pointer;
+    border-radius: var(--radius);
+    background-color: var(--light-red);
+    font-weight: 600;
+    color: var(--dark-red);
 }
