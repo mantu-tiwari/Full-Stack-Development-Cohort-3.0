@@ -1,7 +1,8 @@
 import React from "react";
 
-const ProductCard = ({ product }) => {
-  console.log(product);
+const ProductCard = ({ product,del }) => {
+    // del()
+//   console.log(product);
   return (
     <div className="border-2 p-3 flex flex-col gap-3 rounded-2xl justify-between ">
       <div className="w-40">
@@ -12,7 +13,10 @@ const ProductCard = ({ product }) => {
         <p className="font-semibold">{product.description.substring(0, 20)}</p>
         <p className="font-semibold">{product.price}</p>
       </div>
-      <button className="p-2 text-white rounded-3xl font-bold bg-red-500">
+      <button onClick={() => {
+          del(product.id)
+        // console.log(product.id);
+      }} className="p-2 text-white rounded-3xl font-bold bg-red-500">
         Delete
       </button>
     </div>
