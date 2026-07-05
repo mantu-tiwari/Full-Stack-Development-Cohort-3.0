@@ -107,8 +107,8 @@
             <h4>Actions</h4>
         </div>
         <div class="detail-container">
-            <div class="detail-card">
-                <h4>04-07-2024</h4>
+            <!-- <div class="detail-card">
+                <h4 id="tarik">04-07-2024</h4>
                 <h4>Grocery</h4>
                 <button>Shopping</button>
                 <h4>Amount - 599</h4>
@@ -116,7 +116,7 @@
                     <i class="fa-solid fa-pen"></i>
                     <i class="fa-solid fa-trash"></i>
                 </div>
-            </div>
+            </div> -->
         </div>
       </section>
     </main>
@@ -129,19 +129,19 @@
                 <i class="fa-solid fa-xmark"></i>
             </div>
             <form>
-                <label for="type">Type</label>
-                <select name="source of income" id="type">
+                <label  for="type">Type</label>
+                <select name="source of income" id="type-inp">
                     <option value="Expense">Expense</option>
                     <option value="Income">Income</option>
                 </select>
-                <label for="Description">Description</label>
-                <input id="Description" type="text" placeholder="Eg. Amazon, Salary, Coffee">
-                <label for="Amount">Amount</label>
-                <input id="Amount" type="number">
-                <label for="Date">Date</label>
-                <input id="Date" type="date">
-                <label for="Category">Category</label>
-                <select name="Spent Category" id="Category">
+                <label  for="Description">Description</label>
+                <input id="desk-inp" type="text" placeholder="Eg. Amazon, Salary, Coffee">
+                <label  for="Amount">Amount</label>
+                <input id="amount-inp" type="number">
+                <label  for="Date">Date</label>
+                <input id="date-inp" type="date">
+                <label  for="Category">Category</label>
+                <select name="Spent Category" id="category-inp">
                     <option value="Others">Others</option>
                     <option value="Food Dining">Food Dining</option>
                     <option value="Recharge Bills">Recharge Bills</option>
@@ -150,7 +150,7 @@
                     <option value="Salary">Salary</option>
                     <option value="Entertenment">Entertenment</option>
                 </select>
-                <button>Save Transaction</button>
+                <button class="save">Save Transaction</button>
             </form>
         </div>
     </div>

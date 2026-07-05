@@ -265,6 +265,9 @@ main{
 .detail-card h4{
     width: 20%;
 }
+.detail-card #tarik{
+    font-size: 0.8rem;
+}
 .detail-card button{
     width: 20%;
     padding: 0.2rem 0.5rem;
