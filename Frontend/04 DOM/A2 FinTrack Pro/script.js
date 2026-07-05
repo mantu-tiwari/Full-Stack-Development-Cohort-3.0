@@ -10,7 +10,7 @@ const amountInp = document.querySelector('#amount-inp')
 const dateInp = document.querySelector('#date-inp')
 const categoryInp = document.querySelector('#category-inp')
 const container = document.querySelector('.detail-container')
-
+let transaction = [];
 
 // (Add Transaction Form) open and close
 const openForm = () => {
@@ -39,17 +39,29 @@ formContainer.addEventListener('submit', (e) => {
         alert('Kindly fill all details')
         return
     }
-    container.innerHTML += `<div class="detail-card">
-                <h4 id="tarik">${date}</h4>
-                <h4>${description}</h4>
-                <button>${category}</button>
-                <h4>${amount}</h4>
+    transaction.push({
+        description,
+        amount,
+        date,
+        category
+    })
+    ui()
+    console.log(transaction);
+    closeForm()
+    formContainer.reset()
+})
+const ui = () => {
+    container.innerHTML = ''
+    transaction.forEach((e,i) => {
+        container.innerHTML += `<div class="detail-card">
+                <h4 id="tarik">${e.date}</h4>
+                <h4>${e.description}</h4>
+                <button>${e.category}</button>
+                <h4>${e.amount}</h4>
                 <div class="act-btn">
                     <i class="fa-solid fa-pen"></i>
                     <i class="fa-solid fa-trash"></i>
                 </div>
             </div>`
-
-    closeForm()
-    formContainer.reset()
-})
+    })
+}
