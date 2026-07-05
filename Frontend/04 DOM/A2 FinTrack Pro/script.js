@@ -60,8 +60,15 @@ const ui = () => {
                 <h4>${e.amount}</h4>
                 <div class="act-btn">
                     <i class="fa-solid fa-pen"></i>
-                    <i class="fa-solid fa-trash"></i>
+                    <i onclick="deleteTransaction(${i})" class="fa-solid fa-trash"></i>
                 </div>
             </div>`
     })
+}
+
+// Delete Transaction
+let deleteTransaction = (i) => {
+    transaction.splice(i,1)
+    console.log(transaction);
+    ui()
 }
