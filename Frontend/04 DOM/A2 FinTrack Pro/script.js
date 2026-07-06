@@ -15,7 +15,8 @@ const balanceAmount = document.querySelector('#balance h2')
 const incomeAmount = document.querySelector('#income h2')
 const expenseAmount = document.querySelector('#expense h2')
 const totalAmount = document.querySelector('#total h2')
-let transaction = [];
+let transaction = JSON.parse(localStorage.getItem("transactionDetails")) || [];
+console.log(transaction);
 let updateIndex = null
 
 // (Add Transaction Form) open and close
@@ -56,8 +57,10 @@ formContainer.addEventListener('submit', (e) => {
     if (updateIndex !== null){
         transaction[updateIndex] = obj
         updateIndex = null
+        localStorage.setItem('transactionDetails', JSON.stringify(transaction))
     }else{
         transaction.push(obj)
+        localStorage.setItem('transactionDetails', JSON.stringify(transaction))
     }
     ui()
     updateSummary()
@@ -134,6 +137,7 @@ chart()
 let deleteTransaction = (i) => {
     transaction.splice(i,1)
     console.log(transaction);
+    localStorage.setItem("transactionDetails", JSON.stringify(transaction))
     ui()
     updateSummary()
 }
@@ -150,5 +154,8 @@ let updateTransaction = (data) => {
     formContainer[3].value = transactionDetail.date
     formContainer[4].value = transactionDetail.category
 }
+
+ui()
+updateSummary()
 
 
