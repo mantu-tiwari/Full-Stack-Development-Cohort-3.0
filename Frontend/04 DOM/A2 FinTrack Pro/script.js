@@ -42,7 +42,7 @@ formContainer.addEventListener('submit', (e) => {
     let amount = Number(amountInp.value)
     let date = dateInp.value
     let category = categoryInp.value
-    if(description.trim() === '' || amount.trim() === '' || date.trim() === '' || category.trim() === ''){
+    if(description.trim() === '' || category.trim() === ''){
         alert('Kindly fill all details')
         return
     }
