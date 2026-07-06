@@ -11,6 +11,10 @@ const amountInp = document.querySelector('#amount-inp')
 const dateInp = document.querySelector('#date-inp')
 const categoryInp = document.querySelector('#category-inp')
 const container = document.querySelector('.detail-container')
+const balanceAmount = document.querySelector('#balance h2')
+const incomeAmount = document.querySelector('#income h2')
+const expenseAmount = document.querySelector('#expense h2')
+const totalAmount = document.querySelector('#total h2')
 let transaction = [];
 let updateIndex = null
 
@@ -35,7 +39,7 @@ formContainer.addEventListener('submit', (e) => {
     e.preventDefault()
     let type = typeInp.value
     let description = deskInp.value
-    let amount = amountInp.value
+    let amount = Number(amountInp.value)
     let date = dateInp.value
     let category = categoryInp.value
     if(description.trim() === '' || amount.trim() === '' || date.trim() === '' || category.trim() === ''){
@@ -56,10 +60,12 @@ formContainer.addEventListener('submit', (e) => {
         transaction.push(obj)
     }
     ui()
+    updateSummary()
     console.log(transaction);
     formContainer.reset()
     closeForm()
 })
+// Ui Creation
 const ui = () => {
     container.innerHTML = ''
     transaction.forEach((e,i) => {
@@ -75,12 +81,31 @@ const ui = () => {
             </div>`
     })
 }
+// Summary card update
+const updateSummary = () => {
+    let income = 0
+    let expense = 0
+    let currentBalance = 0
+    transaction.forEach((e,i) => {
+        if(e.type === 'Income'){
+            income += e.amount
+        }else{
+            expense += e.amount
+        }
+    })
+    currentBalance = income-expense
+    balanceAmount.textContent = `$${currentBalance}`
+    incomeAmount.textContent = `$${income}`
+    expenseAmount.textContent = `$${expense}`
+    totalAmount.textContent = transaction.length
+}
 
 // Delete Transaction
 let deleteTransaction = (i) => {
     transaction.splice(i,1)
     console.log(transaction);
     ui()
+    updateSummary()
 }
 
 // Update Transaction

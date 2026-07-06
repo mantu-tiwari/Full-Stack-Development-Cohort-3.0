@@ -153,6 +153,15 @@ main{
     color: var(--dark-blue);
     background-color: var(--light-blue);
 }
+#balance h2{
+    color: var(--dark-blue);
+}
+#income h2{
+    color: var(--dark-green);
+}
+#expense h2{
+    color: var(--dark-red);
+}
 
 /* Section 2 */
 .sec-2{
