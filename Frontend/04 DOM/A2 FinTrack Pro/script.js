@@ -15,6 +15,7 @@ const balanceAmount = document.querySelector('#balance h2')
 const incomeAmount = document.querySelector('#income h2')
 const expenseAmount = document.querySelector('#expense h2')
 const totalAmount = document.querySelector('#total h2')
+const resetBtn = document.querySelector('.reset-btn')
 let transaction = JSON.parse(localStorage.getItem("transactionDetails")) || [];
 console.log(transaction);
 let updateIndex = null
@@ -154,6 +155,19 @@ let updateTransaction = (data) => {
     formContainer[3].value = transactionDetail.date
     formContainer[4].value = transactionDetail.category
 }
+
+// Reset Button
+resetBtn.addEventListener('click',() => {
+    if(confirm('Do you want to reset Data')){
+        transaction = []
+        console.log("data is reset");
+        localStorage.removeItem("transactionDetails")
+        ui()
+        updateSummary()
+    }else{
+        console.log('no reset');
+    } 
+})
 
 ui()
 updateSummary()
