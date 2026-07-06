@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvAm7j9rw7C2wFUqBsI-myyB5d6LY2nqSvA_kT78dMZKZoAsUKZG0o-dZ4&s=10" type="image/x-icon">
     <script src="https://kit.fontawesome.com/90bf4f9655.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   </head>
   <body>
     <!-- Aside  -->
@@ -74,7 +75,9 @@
       <section class="sec-2">
         <div class="cashflow">
           <h2>Cash Flow Analysis</h2>
-          <div class="graph"></div>
+          <div class="graph">
+            <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+          </div>
         </div>
         <div class="preferences">
           <h2>Preferences</h2>

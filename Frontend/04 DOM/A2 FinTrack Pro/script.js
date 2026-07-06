@@ -98,7 +98,37 @@ const updateSummary = () => {
     incomeAmount.textContent = `$${income}`
     expenseAmount.textContent = `$${expense}`
     totalAmount.textContent = transaction.length
+    chart(income,expense)
 }
+// Creating Chart
+const chart = (income, expense) => {
+var xValues = ["income","Expense"];
+var yValues = [income,expense];
+var barColors = ["green", "red"];
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      label: "Transaction",
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+        }]
+    }
+}
+});
+}
+chart()
 
 // Delete Transaction
 let deleteTransaction = (i) => {
@@ -120,3 +150,5 @@ let updateTransaction = (data) => {
     formContainer[3].value = transactionDetail.date
     formContainer[4].value = transactionDetail.category
 }
+
+
