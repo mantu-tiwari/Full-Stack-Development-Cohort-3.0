@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import ProductCard from './ProductCard'
-
 const App = () => {
-
 const [data, setData] = useState([
   {
     "id": 1,
@@ -30,22 +28,29 @@ const [data, setData] = useState([
     "price": 119.00
   }
 ])
-
 const deleteData = (id) => {
     let prod = data.filter((e) => e.id !== id)
     setData(prod)
 }
-
-
-  const a = 10
+const increasePrice = (id) => {
+  const updateProd = data.map((e) => {
+      if(e.id === id){
+        return {
+          ...e,
+          price: e.price++
+        }
+      }
+      return e
+  })
+  setData(updateProd)
+}
   return (
     <div>
-      <h2>The number is: {a} </h2>
       <div className="container flex gap-1 flex-wrap">
         {
           data.map((e,i) => {
               return(
-                <ProductCard key={e.id} product={e} del = {deleteData} />
+                <ProductCard key={e.id} product={e} del = {deleteData} incPrice ={increasePrice} />
               )
           })
         }
@@ -53,6 +58,5 @@ const deleteData = (id) => {
     </div>
   )
 }
-
 export default App
 
