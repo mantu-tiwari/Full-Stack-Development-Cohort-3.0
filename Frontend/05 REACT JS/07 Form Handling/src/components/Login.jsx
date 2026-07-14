@@ -21,7 +21,7 @@ const Login = ({setToggle}) => {
         <p>
           Don't have an account?{" "}
           <span onClick={() => {
-            setToggle(false)
+            setToggle(prev => !prev)
           }} className="text-blue-800 cursor-pointer">Register Here</span>
         </p>
       </form>
