@@ -4,7 +4,7 @@ import FormPractice from './FormPractice'
 const App = () => {
   return (
     <div>
-
+      <FormPractice/>
     </div>
   )
 }
