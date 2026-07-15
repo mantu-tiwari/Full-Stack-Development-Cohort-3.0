@@ -117,7 +117,7 @@ const FormPractice = () => {
             name: '',
             email: '',
           })
-      }} className="border-1 p-1 rounded-lg block">Reset</button>
+      }} className="border p-1 rounded-lg block">Reset</button>
       <h1>name: {del.name} </h1>
       <h1>email: {del.email} </h1>
     </div>

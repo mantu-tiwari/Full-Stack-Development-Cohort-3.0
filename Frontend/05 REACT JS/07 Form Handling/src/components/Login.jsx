@@ -6,12 +6,12 @@ const Login = ({setToggle}) => {
       <h2 className="text-center font-bold">Login Form </h2>
       <form className="flex flex-col gap-4 p-2 w-80 " action="">
         <input
-          className="border-1 py-1 px-3 rounded-lg"
+          className="border py-1 px-3 rounded-lg"
           type="text"
           placeholder="email"
         />
         <input
-          className="border-1 py-1 px-3 rounded-lg"
+          className="border py-1 px-3 rounded-lg"
           type="text"
           placeholder="password"
         />
