@@ -31,6 +31,7 @@
 
 import React, { useRef, useState } from "react";
 import Form from "./components/Form";
+import RHF from "./components/RHF";
 
 const App = () => {
   console.log("app rendering");
@@ -40,7 +41,8 @@ const App = () => {
   return (
     <div className="bg-gray-200 min-h-screen p-4">
       <h1 className="pb-2">Hey.. This is Form</h1>
-      <Form/>
+      {/* <Form/> */}
+      <RHF/>
 
       {/* <input
       name="name"
