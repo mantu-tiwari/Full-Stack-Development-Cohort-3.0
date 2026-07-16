@@ -34,15 +34,15 @@ import Form from "./components/Form";
 
 const App = () => {
   console.log("app rendering");
-    const inpRef = useRef();
-    console.log(inpRef);
+    // const inpRef = useRef();
+    // console.log(inpRef);
 
   return (
     <div className="bg-gray-200 min-h-screen p-4">
       <h1 className="pb-2">Hey.. This is Form</h1>
-      {/* <Form/> */}
+      <Form/>
 
-      <input
+      {/* <input
       name="name"
         ref={inpRef}
         type="text"
@@ -55,7 +55,7 @@ const App = () => {
         }}
       >
         Submit
-      </button>
+      </button> */}
     </div>
   );
 };
