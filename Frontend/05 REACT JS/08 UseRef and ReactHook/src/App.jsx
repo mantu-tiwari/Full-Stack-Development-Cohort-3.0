@@ -29,17 +29,35 @@
 // };
 // export default App;
 
-import React from 'react'
-import Form from './components/Form'
+import React, { useRef, useState } from "react";
+import Form from "./components/Form";
 
 const App = () => {
+  console.log("app rendering");
+    const inpRef = useRef();
+    console.log(inpRef);
+
   return (
-    <div className='bg-gray-200 min-h-screen p-4'>
-        <h1 className='pb-2'>Hey.. This is Form</h1>
-        <Form/>
+    <div className="bg-gray-200 min-h-screen p-4">
+      <h1 className="pb-2">Hey.. This is Form</h1>
+      {/* <Form/> */}
+
+      <input
+      name="name"
+        ref={inpRef}
+        type="text"
+        placeholder="name"
+      />
+      <button
+        onClick={() => {
+        //   console.log(inpRef);        
+          console.log(inpRef.current.value);  
+        }}
+      >
+        Submit
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default App
-
+export default App;
