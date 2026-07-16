@@ -4,6 +4,7 @@ const Form = () => {
   console.log("form rendering");
 
   const formRef = useRef({});
+  const [product, setProduct] = useState({})
   //   const nameRef = useRef()
   //   const priceRef = useRef()
   //   const catRef = useRef()
@@ -11,10 +12,21 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formRef.current.name.value);
-    console.log(formRef.current.price.value);
-    console.log(formRef.current.categpry.value);
-    console.log(formRef.current.image.value);
+    let obj = {
+        pName: formRef.current.name.value,
+        price: formRef.current.price.value,
+        category: formRef.current.category.value,
+        image: formRef.current.image.value
+    }
+    setProduct(obj)
+    console.log(obj);
+    console.log(product);
+
+    // console.log(formRef.current.name.value);
+    // console.log(formRef.current.price.value);
+    // console.log(formRef.current.categpry.value);
+    // console.log(formRef.current.image.value);
+
     // console.log(nameRef.current.value);
     // console.log(priceRef.current.value);
     // console.log(catRef.current.value);
@@ -48,7 +60,7 @@ const Form = () => {
         />
         <span>Select Category</span>
         <select ref={(e) => {
-            formRef.current.categpry = e
+            formRef.current.category = e
         }}  className="p-2 border rounded-lg">
           <option value="mens">Mens</option>
           <option value="women">Women</option>
@@ -67,6 +79,11 @@ const Form = () => {
           CREATE
         </button>
       </form>
+
+      <h1>{product.pName}</h1>
+      <h1>{product.price}</h1>
+      <h1>{product.category}</h1>
+      <h1>{product.image}</h1>
     </div>
   );
 };
