@@ -26,22 +26,23 @@
 // export default App
 
 import React, { useState } from "react";
+import { useForm } from 'react-hook-form';
 import Navbar from "./components/Navbar";
 import UserCard from "./components/UserCard";
 import Form from "./components/Form";
 
 const App = () => {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
   return (
     <div className="p-4 ">
-      <Navbar />
+      <Navbar setToggle={setToggle} />
       {toggle ? (
-        <div className="p-4 flex flex-wrap gap-4 bg-red-700">
+        <div className="p-4 flex flex-wrap gap-4 bg-red-700 rounded-lg min-h-screen">
           <UserCard />
         </div>
       ) : (
         <div>
-          <Form />
+          <Form setToggle={setToggle} />
         </div>
       )}
     </div>

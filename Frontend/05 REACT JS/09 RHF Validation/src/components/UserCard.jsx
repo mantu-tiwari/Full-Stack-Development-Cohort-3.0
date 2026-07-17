@@ -2,7 +2,7 @@ import React from 'react'
 
 const UserCard = () => {
   return (
-    <div className='bg-white w-fit p-4 rounded-lg flex flex-col gap-4'>
+    <div className='bg-white w-fit p-4 rounded-lg flex flex-col gap-4 h-fit'>
       <div className=' self-center'>
         <img  src="https://img.icons8.com/?size=100&id=20751&format=png&color=000000" alt="display img" />
       </div>
