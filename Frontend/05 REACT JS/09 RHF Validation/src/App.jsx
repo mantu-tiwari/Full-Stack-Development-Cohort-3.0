@@ -1,4 +1,4 @@
-// // Revision 
+// // Revision
 // import React, { useState } from 'react'
 // import Register from './revision/Register'
 // import Login from './revision/Login'
@@ -25,16 +25,27 @@
 // }
 // export default App
 
-import React from 'react'
-import Navbar from './components/Navbar'
+import React, { useState } from "react";
+import Navbar from "./components/Navbar";
+import UserCard from "./components/UserCard";
+import Form from "./components/Form";
 
 const App = () => {
+  const [toggle, setToggle] = useState(false);
   return (
-    <div className='p-4 '>
-      <Navbar/>
+    <div className="p-4 ">
+      <Navbar />
+      {toggle ? (
+        <div className="p-4 flex flex-wrap gap-4 bg-red-700">
+          <UserCard />
+        </div>
+      ) : (
+        <div>
+          <Form />
+        </div>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default App
-
+export default App;
