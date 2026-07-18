@@ -26,23 +26,28 @@
 // export default App
 
 import React, { useState } from "react";
-import { useForm } from 'react-hook-form';
+import { useForm } from "react-hook-form";
 import Navbar from "./components/Navbar";
 import UserCard from "./components/UserCard";
 import Form from "./components/Form";
 
 const App = () => {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
+  const [user, setUser] = useState([]);
+  console.log(user);
+
   return (
     <div className="p-4 ">
       <Navbar setToggle={setToggle} />
       {toggle ? (
-        <div className="p-4 flex flex-wrap gap-4 bg-red-700 rounded-lg min-h-screen">
-          <UserCard />
+        <div className="p-4 flex flex-wrap gap-4 content-start bg-red-700 rounded-lg min-h-screen">
+          {user.map((e) => {
+              return <UserCard user={e} setToggle={setToggle} />
+          })}
         </div>
       ) : (
         <div>
-          <Form setToggle={setToggle} />
+          <Form setToggle={setToggle} setUser={setUser} />
         </div>
       )}
     </div>

@@ -1,23 +1,29 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
-const Form = ({ setToggle }) => {
+const Form = ({ setToggle, setUser }) => {
+
+
   const { register, reset, control, handleSubmit, formState:{errors} } = useForm({
     mode: 'onChange'
   });
-  console.log('error', errors);
+  // console.log('error', errors);
   const formSubmit = (data) => {
     console.log(data);
+    setUser( (prev) => [...prev, data])
+    setToggle((prev) => !prev)
     reset();
   };
 
   
+
   return (
     <div className="bg-red-700 min-h-screen p-4 flex flex-col gap-2 items-center rounded-lg">
       <h1 className="text-white font-bold text-2xl">Create User</h1>
       
       <form
         onSubmit={handleSubmit(formSubmit)}
+        
         className="w-fit flex flex-col gap-4 bg-white p-4 rounded-lg"
       >
         <input
