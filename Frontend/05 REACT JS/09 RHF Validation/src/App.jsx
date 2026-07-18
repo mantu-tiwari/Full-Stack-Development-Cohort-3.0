@@ -32,7 +32,7 @@ import UserCard from "./components/UserCard";
 import Form from "./components/Form";
 
 const App = () => {
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
   return (
     <div className="p-4 ">
       <Navbar setToggle={setToggle} />
