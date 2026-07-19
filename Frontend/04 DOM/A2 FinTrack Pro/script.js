@@ -16,6 +16,7 @@ const incomeAmount = document.querySelector('#income h2')
 const expenseAmount = document.querySelector('#expense h2')
 const totalAmount = document.querySelector('#total h2')
 const resetBtn = document.querySelector('.reset-btn')
+const darkModeBtn = document.querySelector('.toggle')
 let transaction = JSON.parse(localStorage.getItem("transactionDetails")) || [];
 console.log(transaction);
 let updateIndex = null
@@ -171,5 +172,11 @@ resetBtn.addEventListener('click',() => {
 
 ui()
 updateSummary()
+
+// Dark Mode
+darkModeBtn.addEventListener('click', () => {
+    body.classList.toggle('dark')
+    darkModeBtn.classList.toggle('end')
+})
 
 
