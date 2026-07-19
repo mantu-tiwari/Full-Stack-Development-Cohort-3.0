@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productivity Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="https://img.icons8.com/?size=100&id=XnHBz2LnhELw&format=png&color=000000"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/90bf4f9655.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+
+    <nav>
+        <div class="logo">
+          <img
+            src="https://img.icons8.com/?size=100&id=XnHBz2LnhELw&format=png&color=000000"
+            alt="logo"
+          />
+          <h1>Productivity Dashboard</h1>
+        </div>
+        <i class="fa-solid fa-circle-half-stroke"></i>
+    </nav>
+
+    <main>
+      <!-- Dashboard Section -->
+      <section class="dashboard ">
+        <section class="hero-dashboard">
+          <div class="summary-dsb">
+            <h1>👋 Hello Everyone</h1>
+            <p>Quotes Loading....</p>
+          </div>
+          <div class="feature-dsb" id="weather">
+            <img
+            src="https://img.icons8.com/?size=100&id=15359&format=png&color=000000"
+            alt="weather logo"
+            />
+            <h2>City...</h2>
+            <h3> </h3>
+            <p>Loading...</p>
+          </div>
+          <div class="feature-dsb" id="date">
+            <img
+              src="https://img.icons8.com/?size=100&id=12776&format=png&color=000000"
+              alt="date logo"
+            />
+            <p>Date</p>
+            <h3>DD MM YYYY</h3>
+          </div>
+          <div class="feature-dsb" id="time">
+            <img
+              src="https://img.icons8.com/?size=100&id=TWgnOuDDzAih&format=png&color=000000"
+              alt="time logo"
+            />
+            <p>Time</p>
+            <h3>HH MM SS</h3>
+          </div>
+        </section>
+
+        <section class="cards">
+          <div id="todo-card" class="feature-card">
+            <img
+              src="https://img.icons8.com/?size=100&id=40318&format=png&color=000000"
+              alt="todo logo"
+            />
+            <h2>Todo</h2>
+            <p>Add Manage and Complete your Daily Task</p>
+            <button>Open</button>
+          </div>
+          <div id="planner-card" class="feature-card">
+            <img
+              src="https://img.icons8.com/?size=100&id=13526&format=png&color=000000"
+              alt="daily planner logo"
+            />
+            <h2>Daily Planner</h2>
+            <p>Plan your Day by time slots and stay on track</p>
+            <button>Open</button>
+          </div>
+          <div id="goal-card" class="feature-card">
+            <img
+              src="https://img.icons8.com/?size=100&id=63765&format=png&color=000000"
+              alt="daily goals logo"
+            />
+            <h2>Daily Goals</h2>
+            <p>Set your Goals and Track your Progress</p>
+            <button>Open</button>
+          </div>
+          <div id="pomodomo-card" class="feature-card">
+            <img
+              src="https://img.icons8.com/?size=100&id=63256&format=png&color=000000"
+              alt="pomodomo logo"
+            />
+            <h2>PomoDomo</h2>
+            <p>Focus Better With Pomodomo Technique</p>
+            <button>Open</button>
+          </div>
+          <div id="quote-card" class="feature-card">
+            <img
+              src="https://img.icons8.com/?size=100&id=Gu5nwNOC8UZL&format=png&color=000000"
+              alt="quotes logo"
+            />
+            <h2>Quotes</h2>
+            <p>Get Inspired with powerful Quotes</p>
+            <button>Open</button>
+          </div>
+        </section>
+      </section>
+
+      <!-- To-Do Page Section -->
+      <section class="external-page" id="todo-page">
+        <div class="back-btn">
+          <button>Back</button>
+        </div>
+        <div class="container" id="todo-container">
+          <h1>TO-DO Lists</h1>
+          <form class="todo-form" >
+            <input required type="text" placeholder="Add Task">
+            <button>Add</button>
+          </form>
+          <div class="todo-list">
+            <!-- <div class="todo-works">
+              <h3>text</h3>
+              <div>
+                <label> 
+                  <input type="checkbox" name="Complete" > Complete
+                </label>
+                <i  class="fa-solid fa-trash"></i>
+                <i  class="fa-solid fa-star"></i>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Daily Planner Page Section -->
+      <section class="external-page" id="planner-page">
+        <div class="back-btn">
+          <button>Back</button>
+        </div>
+        <div class="container" id="planner-container">
+          <h1>Daily Planner</h1>
+          <div class="planner-cards">
+            <!-- <div class="planner-form">
+              <h3>Time</h3>
+              <textarea name="" id=""></textarea>
+              <button>Reset</button> -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Daily Goal  Page Section -->
+      <section class="external-page" id="goal-page">
+        <div class="back-btn">
+          <button>Back</button>
+        </div>
+        <div class="container" id="goal-container">
+          <h1>Daily Goals</h1>
+          <form class="goal-form" >
+            <input required type="text" placeholder="Add Goals">
+            <button>Add</button>
+          </form>
+          <div class="goal-list">
+            <!-- <div class="goal-works">
+              <h3>text</h3>
+              <div>
+                <label> 
+                  <input type="checkbox" name="Complete" > Complete
+                </label>
+                <i  class="fa-solid fa-trash"></i>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Pomodomo Page Section -->
+      <section class="external-page" id="pomodomo-page">
+        <div class="back-btn">
+          <button>Back</button>
+        </div>
+        <div class="container" id="pomodomo-container">
+          <h1>25:00</h1>
+          <div class="media-btn">
+            <img id="play-btn" src="https://img.icons8.com/?size=100&id=63671&format=png&color=000000" alt="Play ">
+            <img id="pause-btn" src="https://img.icons8.com/?size=100&id=63298&format=png&color=000000" alt="pause">
+            <img id="reset-btn" src="https://img.icons8.com/?size=100&id=63693&format=png&color=000000" alt="Reset">
+          </div>
+        </div>
+      </section>
+
+      <!-- Quote Page Section -->
+      <section class="external-page" id="quote-page">
+        <div>
+          <button class="back-btn">Back</button>
+        </div>
+        <div class="container" id="quote-container">
+          <div class="quote-area">
+            <h1>Loading.....</h1>
+            <p></p>
+          </div>
+          <button>New Quotes</button>
+        </div>
+      </section>
+
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
