@@ -3,8 +3,9 @@ import React, { useState } from "react";
 import Register from "./revision/Register";
 import Login from "./revision/Login";
 import Card from "./revision/Card";
+import RHF from "./revision/RHF";
 const App = () => {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
   const [arr, setArr] = useState([]);
   console.log(arr);
   return (
@@ -13,8 +14,9 @@ const App = () => {
       {toggle ? (
         <>
           <Register setToggle={setToggle} setArr={setArr} />
+          <RHF setArr={setArr}/>
           <h2>Welcome to card</h2>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4 ">
             {arr.map((e) => {
               return <Card user={e} />;
             })}

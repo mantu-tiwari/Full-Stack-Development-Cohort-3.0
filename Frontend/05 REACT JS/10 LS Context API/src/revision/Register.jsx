@@ -22,7 +22,7 @@ const Register = ({setToggle, setArr,setHide}) => {
   return (
     <div>
       <h1>Registratin Form</h1>
-      <form onSubmit={handleSubmit} className='flex flex-col w-fit border' >
+      <form onSubmit={handleSubmit} className='flex flex-col w-fit border rounded-lg' >
         <input onChange={handleChange} value={data.name} name='name' type="text" placeholder='name' />
         <input onChange={handleChange} value={data.email} name='email' type="text" placeholder='email' />
         <input onChange={handleChange} value={data.city} name='city' type="text" placeholder='city' />
