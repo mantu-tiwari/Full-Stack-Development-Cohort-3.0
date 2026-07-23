@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserCard = ({ user, setToggle }) => {
+const UserCard = ({ user, setToggle, del, idx }) => {
   // console.log(user);
   return (
     <div className="bg-white p-4 gap-2 w-60 rounded-xl flex flex-col ">
@@ -25,7 +25,9 @@ const UserCard = ({ user, setToggle }) => {
         >
           Update
         </button>
-        <button className=" cursor-pointer flex-1 bg-red-500 hover:bg-red-600 transition-colors font-bold text-white rounded-lg py-2 text-center text-sm ">
+        <button onClick={() => {
+            del(idx)
+        }} className=" cursor-pointer flex-1 bg-red-500 hover:bg-red-600 transition-colors font-bold text-white rounded-lg py-2 text-center text-sm ">
           Delete
         </button>
       </div>

@@ -5,11 +5,19 @@ import UserCard from "./components/UserCard";
 import Form from "./components/Form";
 
 const App = () => {
-
   const [toggle, setToggle] = useState(true);
   const [user, setUser] = useState(() => {
-      return JSON.parse(localStorage.getItem('admi')) || []
+    return JSON.parse(localStorage.getItem("admi")) || [];
   });
+
+  const deleteUser = (id) => {
+    const filterUser = user.filter((e, i) => {
+      return id !== i;
+    });
+    // console.log(filterUser);
+    localStorage.setItem("admi", JSON.stringify(filterUser));
+    setUser(filterUser);
+  };
   // console.log(user);
 
   return (
@@ -17,8 +25,16 @@ const App = () => {
       <Navbar setToggle={setToggle} />
       {toggle ? (
         <div className="p-4 flex flex-wrap gap-4 content-start bg-red-700 rounded-lg min-h-screen">
-          {user.map((e) => {
-              return <UserCard user={e} setToggle={setToggle} />
+          {user.map((e, i) => {
+            return (
+              <UserCard
+                idx={i}
+                key={i}
+                del={deleteUser}
+                user={e}
+                setToggle={setToggle}
+              />
+            );
           })}
         </div>
       ) : (
@@ -31,9 +47,6 @@ const App = () => {
 };
 
 export default App;
-
-
-
 
 // // REVISION of Previous Class
 // import React, { useState } from "react";
