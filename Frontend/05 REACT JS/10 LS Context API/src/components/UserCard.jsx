@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserCard = ({ user, setToggle, del, idx }) => {
+const UserCard = ({ user, setToggle, del, idx, setUpadtedData }) => {
   // console.log(user);
   return (
     <div className="bg-white p-4 gap-2 w-60 rounded-xl flex flex-col ">
@@ -19,6 +19,7 @@ const UserCard = ({ user, setToggle, del, idx }) => {
       <div className="flex gap-2 ">
         <button
           onClick={() => {
+            setUpadtedData(user)
             setToggle((prev) => !prev);
           }}
           className=" cursor-pointer flex-1 bg-amber-400 hover:bg-amber-500 transition-colors font-bold rounded-lg py-2 text-center text-sm "

@@ -9,6 +9,8 @@ const App = () => {
   const [user, setUser] = useState(() => {
     return JSON.parse(localStorage.getItem("admi")) || [];
   });
+  const [upadtedData, setUpadtedData] = useState(null)
+  // console.log(upadtedData);
 
   const deleteUser = (id) => {
     const filterUser = user.filter((e, i) => {
@@ -28,6 +30,7 @@ const App = () => {
           {user.map((e, i) => {
             return (
               <UserCard
+              setUpadtedData={setUpadtedData}
                 idx={i}
                 key={i}
                 del={deleteUser}
@@ -39,7 +42,7 @@ const App = () => {
         </div>
       ) : (
         <div>
-          <Form user={user} setToggle={setToggle} setUser={setUser} />
+          <Form upadtedData={upadtedData} user={user} setToggle={setToggle} setUser={setUser} />
         </div>
       )}
     </div>
