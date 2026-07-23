@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
-const Form = ({ setToggle, setUser }) => {
+const Form = ({ setToggle, setUser, user }) => {
 
 
   const { register, reset, control, handleSubmit, formState:{errors} } = useForm({
@@ -10,7 +10,9 @@ const Form = ({ setToggle, setUser }) => {
   // console.log('error', errors);
   const formSubmit = (data) => {
     console.log(data);
-    setUser( (prev) => [...prev, data])
+    const arr = [...user, data]
+    setUser(arr)
+    localStorage.setItem('admi', JSON.stringify(arr))
     setToggle((prev) => !prev)
     reset();
   };

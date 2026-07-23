@@ -7,8 +7,10 @@ import Form from "./components/Form";
 const App = () => {
 
   const [toggle, setToggle] = useState(true);
-  const [user, setUser] = useState([]);
-  console.log(user);
+  const [user, setUser] = useState(() => {
+      return JSON.parse(localStorage.getItem('admi')) || []
+  });
+  // console.log(user);
 
   return (
     <div className="p-4 ">

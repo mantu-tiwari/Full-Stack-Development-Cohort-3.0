@@ -1,7 +1,7 @@
 import React from "react";
 
 const UserCard = ({ user, setToggle }) => {
-  console.log(user);
+  // console.log(user);
   return (
     <div className="bg-white p-4 gap-2 w-60 rounded-xl flex flex-col ">
       <div className="h-40 ">
