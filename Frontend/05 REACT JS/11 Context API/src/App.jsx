@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Navbar from "./components/Navbar";
 import ProductCard from "./components/ProductCard";
 import Cart from "./components/Cart";
+import { MyShop } from "./context/MyWebsite";
 
 const App = () => {
-  const [toggle, setToggle] = useState(true);
-  const [cartItem, setCartItem] = useState([])
-  console.log(cartItem);
+  
+  const {toggle} = useContext(MyShop)
+
+
+  // console.log(cartItem);
   let product = [
     {
       id: 1,
@@ -283,15 +286,17 @@ const App = () => {
 
   return (
     <div className="p-2 flex flex-col gap-4 bg-red-100">
-      <Navbar setToggle={setToggle} />
+      <Navbar />
       {toggle ? (
         <div className="flex flex-wrap gap-4 justify-center">
           {product.map((e, i) => {
-            return <ProductCard key={i} setCartItem={setCartItem} product={e} />;
+            return (
+              <ProductCard key={i} product={e} />
+            );
           })}
         </div>
       ) : (
-        <Cart cartItem={cartItem} />
+        <Cart />
       )}
     </div>
   );

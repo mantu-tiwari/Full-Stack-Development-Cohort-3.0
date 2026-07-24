@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { MyShop } from '../context/MyWebsite'
 
-const Navbar = ({setToggle}) => {
+const Navbar = () => {
+
+  const {setToggle} = useContext(MyShop)
+
   return (
     <div className='flex justify-between items-center p-4 bg-red-900 text-white rounded-lg'>
       <h1>LOGO</h1>
