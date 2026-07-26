@@ -1,26 +1,59 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import { ContextProvider, MyStore } from './context/MyContext';
+import axios from 'axios'
 
 const App = () => {
 
+  const [toggle, setToggle] = useState(true)
+  const [count, setCount] = useState(0)
+  const [apiData, setApiData] = useState(null)
+  console.log(apiData);
   console.log('app rendering...');
-  const data= useContext(MyStore)
-  console.log(data);
+
+  // api calling using axios - async await use karne se direct data milta hai no more jhanjat
+  const productApi = async () => {
+      let res = await axios.get('https://fakestoreapi.com/products')
+      // console.log(res.data);
+      setApiData(res.data)
+  }
+
+  useEffect(() => {
+    productApi()
+  }, [])
+  
+  
+  
+  // useEffect(() => {
+      
+  // },[])
+
+  // const data= useContext(MyStore)
+  // console.log(data);
 
   return (
     <div>
       <h1>This is App</h1>
 
 {/* context provider ke andar jitne component wrap honge sirf whi render honge */}
-      <ContextProvider>
+      {/* <ContextProvider>
       <Home/>
       <About/>
-      </ContextProvider>
+      </ContextProvider> */}
+      <h1>Count : {count} </h1>
+      <button onClick={() => {
+          setCount(count+1)
+      }} className='border px-2 rounded-lg' >Increase</button>
+      <button onClick={() => {
+          setToggle((prev) => !prev)
+      }} className='border px-2 rounded-lg' >change toggle</button>
 
-      <Contact/>
+        {/* isme jo hai sirf whi chalega unomountin phase wla nhi chalega */}
+      {
+        toggle ? <Contact/> : <About/>
+      }
 
       
     </div>
