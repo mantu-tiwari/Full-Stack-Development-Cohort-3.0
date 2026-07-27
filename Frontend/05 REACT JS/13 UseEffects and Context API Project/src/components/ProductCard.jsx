@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Star } from "lucide-react";
+import { MyStore } from "../context/MyContext";
 
-const ProductCard = ({ product,setCartItem }) => {
+const ProductCard = ({ product, isInCart }) => {
+  const { setCartItem } = useContext(MyStore);
+
+  const addToCart = () => {
+    setCartItem((prev) => [...prev, product]);
+    // alert('Great Product has been added to the Cart')
+  };
+
   return (
     <div className=" group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200">
       {/* Image */}
@@ -43,11 +51,20 @@ const ProductCard = ({ product,setCartItem }) => {
           <span className="text-2xl font-bold text-green-600">
             ${product.price}
           </span>
-          <button onClick={() => {
-              setCartItem((prev) => [...prev, product])
-          }} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition">
-            Add to Cart
-          </button>
+          {isInCart ? (
+            <div className="flex items-center overflow-hidden rounded-lg border">
+              <button className="p-2 hover:bg-gray-100">-</button>
+              <span className="w-10 text-center font-semibold">1</span>
+              <button className="p-2 hover:bg-gray-100">+</button>
+            </div>
+          ) : (
+            <button
+              onClick={addToCart}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition"
+            >
+              Add to Cart
+            </button>
+          )}
         </div>
       </div>
     </div>

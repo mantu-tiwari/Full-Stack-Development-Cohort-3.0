@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "./components/Navbar";
 import ProductCard from "./components/ProductCard";
 import CartScreen from "./pages/CartScreen";
+import { MyStore } from "./context/MyContext";
 
 const App = () => {
+
   const [apiData, setApiData] = useState([]);
-  const [isCartOpen, setIsCartOpen] = useState(false);
-  const [cartItem, setCartItem] = useState([])
-  console.log(apiData);
+  const {isCartOpen, cartItem} = useContext(MyStore)
+  // console.log(apiData);
   console.log(cartItem);
 
   // API Calling using Axios (recommended)
@@ -38,16 +39,23 @@ const App = () => {
 
   return (
     <div>
-      <Navbar setIsCartOpen={setIsCartOpen} />
+      <Navbar />
 
       {isCartOpen ? (
         <div className="h-screen">
-          <CartScreen cartItem={cartItem} />
+          <CartScreen />
         </div>
       ) : (
         <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-4">
           {apiData.map((e) => {
-            return <ProductCard key={e.id} product={e} setCartItem={setCartItem} />;
+
+            // here is the logic to item added to cart
+            const isInCart = cartItem.find((ele) => {
+                return e.id === ele.id
+            })
+            console.log(isInCart);
+
+            return <ProductCard key={e.id} product={e} isInCart={isInCart} />;
           })}
         </div>
       )}
