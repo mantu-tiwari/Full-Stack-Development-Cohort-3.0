@@ -44,7 +44,7 @@ const CartCard = ({ cartProduct }) => {
             <button className="p-2 hover:bg-gray-100">
               <Minus size={18} />
             </button>
-            <span className="w-10 text-center font-semibold">1</span>
+            <span className="w-10 text-center font-semibold">{cartProduct.quantity}</span>
 
             <button className="p-2 hover:bg-gray-100">
               <Plus size={18} />

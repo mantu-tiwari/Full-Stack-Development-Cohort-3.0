@@ -3,10 +3,10 @@ import { Star } from "lucide-react";
 import { MyStore } from "../context/MyContext";
 
 const ProductCard = ({ product, isInCart }) => {
-  const { setCartItem } = useContext(MyStore);
+  const { setCartItem, incQuantity } = useContext(MyStore);
 
   const addToCart = () => {
-    setCartItem((prev) => [...prev, product]);
+    setCartItem((prev) => [...prev, {...product, quantity:1}]);
     // alert('Great Product has been added to the Cart')
   };
 
@@ -54,8 +54,10 @@ const ProductCard = ({ product, isInCart }) => {
           {isInCart ? (
             <div className="flex items-center overflow-hidden rounded-lg border">
               <button className="p-2 hover:bg-gray-100">-</button>
-              <span className="w-10 text-center font-semibold">1</span>
-              <button className="p-2 hover:bg-gray-100">+</button>
+              <span className="w-10 text-center font-semibold">{isInCart.quantity} </span>
+              <button onClick={() => {
+                  incQuantity(product.id)
+              }} className="p-2 hover:bg-gray-100">+</button>
             </div>
           ) : (
             <button
