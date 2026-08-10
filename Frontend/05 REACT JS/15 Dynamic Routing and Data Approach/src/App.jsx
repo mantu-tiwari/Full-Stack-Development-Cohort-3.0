@@ -1,29 +1,48 @@
-import React, { useState } from 'react'
-import Home from './revision/Home'
-import About from './revision/About'
-import Contact from './revision/Contact'
-import Nav from './revision/Nav'
-import { Route, Routes } from 'react-router'
+import React from 'react'
+import Navbar from './components/Navbar'
+import Home from './pages/Home'
+import About from './pages/About'
+import Product from './pages/Product'
+import AppRoutes from './routes/AppRoutes'
 
 const App = () => {
-
-  const [toggle, setToggle] = useState(true)
-
   return (
-    <div>
-      <Nav setToggle={setToggle}  />
-      {/* React router approach */}
-      <Routes>
-        <Route path='/home' element={<Home/>} />
-        <Route path='/about' element={<About/>} />
-        <Route path='/contact' element={<Contact/>} />
-      </Routes>
-      {/* Traditional approach */}
-      {/* {toggle === 'home' && <Home/>}
-      {toggle === 'about' && <About/>}
-      {toggle === 'contact' && <Contact/>} */}
+    <div className='bg-black h-screen p-4'>
+      <Navbar/>
+      <AppRoutes/>
     </div>
   )
 }
 
 export default App
+
+
+
+
+
+// // Revision
+// import React, { useState } from 'react'
+// import Home from './revision/Home'
+// import About from './revision/About'
+// import Contact from './revision/Contact'
+// import Nav from './revision/Nav'
+// import { Route, Routes } from 'react-router'
+// const App = () => {
+//   const [toggle, setToggle] = useState(true)
+//   return (
+//     <div>
+//       <Nav setToggle={setToggle}  />
+//       {/* React router approach */}
+//       <Routes>
+//         <Route path='/home' element={<Home/>} />
+//         <Route path='/about' element={<About/>} />
+//         <Route path='/contact' element={<Contact/>} />
+//       </Routes>
+//       {/* Traditional approach */}
+//       {/* {toggle === 'home' && <Home/>}
+//       {toggle === 'about' && <About/>}
+//       {toggle === 'contact' && <Contact/>} */}
+//     </div>
+//   )
+// }
+// export default App
