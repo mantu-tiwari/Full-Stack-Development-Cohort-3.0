@@ -7,7 +7,7 @@ import AppRoutes from './routes/AppRoutes'
 
 const App = () => {
   return (
-    <div className='bg-black h-screen p-4'>
+    <div className='bg-gray-400 min-h-screen p-4 overflow-hidden'>
       <Navbar/>
       <AppRoutes/>
     </div>

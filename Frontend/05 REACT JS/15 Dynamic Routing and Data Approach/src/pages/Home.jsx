@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { MyStore } from '../context/MyContext'
 import axios from 'axios' 
+import ProductsCard from '../components/ProductsCard'
 
 const Home = () => {
 
@@ -20,8 +21,13 @@ const Home = () => {
   },[])
 
   return (
-    <div>
-      <h1 className='bg-green-600' >This is Home</h1>
+    <div className='grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-4' >
+      {
+        productData.map((e) => {
+
+            return <ProductsCard key={e.id} product={e} />
+        })
+      }
     </div>
   )
 }
