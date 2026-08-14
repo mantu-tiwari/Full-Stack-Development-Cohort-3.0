@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
+import { AuthShop } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const navigate = useNavigate();
+  const {registrationData,setRegistrationData} = useContext(AuthShop)
   const {
     register,
     handleSubmit,
@@ -12,8 +15,10 @@ const Register = () => {
   } = useForm();
 
   const formSubmit = (data) => {
-      console.log(data);
-
+    const arr = [...registrationData, data]
+      setRegistrationData(arr)
+      toast.success('Registered Successfully')
+    localStorage.setItem('registeredUser', JSON.stringify(arr))
       reset()
   }
 

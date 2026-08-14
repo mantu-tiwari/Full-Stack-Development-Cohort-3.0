@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
+import { AuthShop } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const navigate = useNavigate();
+  const {loggedInData, setLoggedInData, registrationData} = useContext(AuthShop)
   const {
     register,
     reset,
@@ -12,7 +15,18 @@ const Login = () => {
   } = useForm();
 
   const formSubmit = (data) => {
-      console.log(data);
+      let user = registrationData.find((e) => {
+          return e.email === data.email && e.password === data.password
+      })
+      if(!user){
+        toast.error('Invalid Credintial')
+        return
+      }
+
+      setLoggedInData(user)
+      localStorage.setItem('loggedInUser', JSON.stringify(user))
+      toast.success('Logged in Successfully')
+      navigate('/main')
 
       reset()
   }
