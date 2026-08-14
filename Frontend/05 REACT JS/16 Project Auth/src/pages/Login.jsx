@@ -20,6 +20,7 @@ const Login = () => {
       })
       if(!user){
         toast.error('Invalid Credintial')
+        reset()
         return
       }
 
