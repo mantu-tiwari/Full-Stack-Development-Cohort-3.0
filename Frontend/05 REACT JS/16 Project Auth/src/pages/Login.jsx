@@ -1,36 +1,9 @@
-import React, { useContext } from "react";
-import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router";
-import { AuthShop } from "../context/AuthContext";
-import toast from "react-hot-toast";
+import React from "react";
+import { useAuth } from "../hooks/useAuth";
 
 const Login = () => {
-  const navigate = useNavigate();
-  const {loggedInData, setLoggedInData, registrationData} = useContext(AuthShop)
-  const {
-    register,
-    reset,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
 
-  const formSubmit = (data) => {
-      let user = registrationData.find((e) => {
-          return e.email === data.email && e.password === data.password
-      })
-      if(!user){
-        toast.error('Invalid Credintial')
-        reset()
-        return
-      }
-
-      setLoggedInData(user)
-      localStorage.setItem('loggedInUser', JSON.stringify(user))
-      toast.success('Logged in Successfully')
-      navigate('/main')
-
-      reset()
-  }
+  const {register, handleSubmit, loginFormSubmit, reset,errors,navigate} = useAuth()
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4">
@@ -41,7 +14,7 @@ const Login = () => {
         </div>
 
         {/* Form */}
-        <form className="space-y-4" onSubmit={handleSubmit(formSubmit)}>
+        <form className="space-y-4" onSubmit={handleSubmit(loginFormSubmit)}>
           {/* Email */}
           <div>
             <label className="block text-sm font-medium text-gray-700">
@@ -55,7 +28,9 @@ const Login = () => {
               className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm"
               placeholder="Enter your email"
             />
-            {errors.email && <p className="text-red-600" >{errors.email.message}</p>}
+            {errors.email && (
+              <p className="text-red-600">{errors.email.message}</p>
+            )}
           </div>
 
           {/* Password */}
@@ -75,7 +50,9 @@ const Login = () => {
               className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm"
               placeholder="Enter your password"
             />
-            {errors.password && <p className="text-red-600" >{errors.password.message}</p>}
+            {errors.password && (
+              <p className="text-red-600">{errors.password.message}</p>
+            )}
           </div>
 
           {/* Submit Button */}

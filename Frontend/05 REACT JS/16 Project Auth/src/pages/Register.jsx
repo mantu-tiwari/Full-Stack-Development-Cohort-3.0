@@ -1,26 +1,30 @@
-import React, { useContext } from "react";
-import { useNavigate } from "react-router";
-import { useForm } from "react-hook-form";
-import { AuthShop } from "../context/AuthContext";
-import toast from "react-hot-toast";
+import React from "react";
+import { useAuth } from "../hooks/useAuth";
+// import { useNavigate } from "react-router";
+// import { useForm } from "react-hook-form";
+// import { AuthShop } from "../context/AuthContext";
+// import toast from "react-hot-toast";
 
 const Register = () => {
-  const navigate = useNavigate();
-  const {registrationData,setRegistrationData} = useContext(AuthShop)
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm();
 
-  const formSubmit = (data) => {
-    const arr = [...registrationData, data]
-      setRegistrationData(arr)
-      toast.success('Registered Successfully')
-    localStorage.setItem('registeredUser', JSON.stringify(arr))
-      reset()
-  }
+    const {register, handleSubmit, registerFormSubmit, reset,errors, navigate} = useAuth()
+  
+  // const navigate = useNavigate();
+  // const {registrationData,setRegistrationData} = useContext(AuthShop)
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   reset,
+  //   formState: { errors },
+  // } = useForm();
+
+  // const formSubmit = (data) => {
+  //   const arr = [...registrationData, data]
+  //     setRegistrationData(arr)
+  //     toast.success('Registered Successfully')
+  //   localStorage.setItem('registeredUser', JSON.stringify(arr))
+  //     reset()
+  // }
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4">
@@ -31,7 +35,7 @@ const Register = () => {
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit(formSubmit)} className="space-y-4">
+        <form onSubmit={handleSubmit(registerFormSubmit)} className="space-y-4">
           {/* Name */}
           <div>
             <label className="block text-sm font-medium text-gray-700">

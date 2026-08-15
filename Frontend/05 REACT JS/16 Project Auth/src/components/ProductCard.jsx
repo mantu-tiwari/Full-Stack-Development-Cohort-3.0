@@ -63,7 +63,7 @@ const ProductCard = ({product}) => {
             </button>
           </div>
 
-          <button className="w-full rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 px-4 py-3 font-semibold text-white shadow-md transition hover:from-indigo-700 hover:to-violet-700 active:scale-[0.98]">
+          <button className="w-full rounded-xl bg-linear-to-r from-indigo-600 to-violet-600 px-4 py-3 font-semibold text-white shadow-md transition hover:from-indigo-700 hover:to-violet-700 active:scale-[0.98]">
             Add to Cart
           </button>
         </div>
