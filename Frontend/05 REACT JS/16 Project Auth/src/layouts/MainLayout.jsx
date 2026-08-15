@@ -1,14 +1,17 @@
-import React from 'react'
-import toast from 'react-hot-toast'
+import React from "react";
+import toast from "react-hot-toast";
+import Navbar from "../components/Navbar";
+import { Outlet } from "react-router";
 
 const MainLayout = () => {
-
-
   return (
-    <div>
-      <h1>Main layout</h1>
+    <div className="grid grid-cols-[1fr_5fr]">
+      <Navbar />
+      <div className="p-4">
+        <Outlet />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default MainLayout
+export default MainLayout;
