@@ -5,12 +5,14 @@ import UserCard from '../components/UserCard';
 const UserPage = () => {
 
     const [userData, setUserData] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
     console.log(userData);
 
     const getUserData = async() => {
         try {
             let res = await axios.get('https://fakestoreapi.com/users')
             setUserData(res.data)
+            setIsLoading(false)
         } catch (error) {
             console.log('data erros ', error);
         }
@@ -18,6 +20,8 @@ const UserPage = () => {
     useEffect(() => {
         getUserData()
     },[])
+
+    if(isLoading) return <h1 className='text-4xl'>Loading....</h1>
 
   return (
     <div className='grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-4'>

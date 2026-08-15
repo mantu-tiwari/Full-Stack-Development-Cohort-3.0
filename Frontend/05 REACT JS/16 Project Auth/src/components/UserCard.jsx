@@ -2,7 +2,6 @@ import React from 'react'
 
 const UserCard = ({user}) => {
 
-    const fullName = `${user.name.firstname} ${user.name.lastname}`;
 
   return (
       <div className=" w-full max-w-md overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-slate-200">
@@ -15,7 +14,7 @@ const UserCard = ({user}) => {
           </div>
 
           <h2 className="mt-4 text-2xl font-bold capitalize text-white">
-            {fullName}
+            {user.name.firstname} {user.name.lastname}
           </h2>
 
           <p className="mt-1 text-indigo-100">@{user.username}</p>

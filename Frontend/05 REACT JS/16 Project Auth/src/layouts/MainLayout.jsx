@@ -5,9 +5,9 @@ import { Outlet } from "react-router";
 
 const MainLayout = () => {
   return (
-    <div className="grid grid-cols-[1fr_5fr]">
+    <div className="h-screen grid grid-cols-[1fr_5fr] ">
       <Navbar />
-      <div className="p-4">
+      <div className="p-4 overflow-auto h-full">
         <Outlet />
       </div>
     </div>
