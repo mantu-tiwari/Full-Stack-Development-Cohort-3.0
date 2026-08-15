@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
 import UserCard from '../components/UserCard';
+import { axiosInstance } from '../config/axiosInstance';
 
 const UserPage = () => {
 
@@ -10,7 +10,7 @@ const UserPage = () => {
 
     const getUserData = async() => {
         try {
-            let res = await axios.get('https://fakestoreapi.com/users')
+            let res = await axiosInstance('/users')
             setUserData(res.data)
             setIsLoading(false)
         } catch (error) {

@@ -1,10 +1,15 @@
-import React from "react";
-import { NavLink } from "react-router";
+import React, { useContext } from "react";
+import { Navigate, NavLink } from "react-router";
 import HomePage from "../pages/HomePage";
 import UserPage from "../pages/UserPage";
 import ProductPage from "../pages/ProductPage";
+import { AuthShop } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
+
+  const {setLoggedInData} = useContext(AuthShop)
+
   return (
     <div className="flex flex-col items-center justify-between p-4 border-r-2  h-screen">
       <h1>LOGO</h1>
@@ -41,7 +46,11 @@ const Navbar = () => {
           Product
         </NavLink>
       </div>
-      <button className="rounded-lg border px-2 cursor-pointer">Logout</button>
+      <button onClick={() => {
+          localStorage.removeItem('loggedInUser')
+          setLoggedInData(null)
+          toast.success('Logged Out Successfully')
+      }} className="rounded-lg border px-2 cursor-pointer">Logout</button>
     </div>
   );
 };
