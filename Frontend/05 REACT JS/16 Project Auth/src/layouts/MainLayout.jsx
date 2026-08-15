@@ -1,6 +1,9 @@
 import React from 'react'
+import toast from 'react-hot-toast'
 
 const MainLayout = () => {
+
+
   return (
     <div>
       <h1>Main layout</h1>
