@@ -1,8 +1,8 @@
 import React from 'react'
 
 
-// second process to implement memoziation
-const About = () => {
+// second process to implement memoziation (recommended)
+const About = ({str}) => {
     console.log('About is rendering');
   return (
     <div>
@@ -11,4 +11,6 @@ const About = () => {
   )
 }
 
-export default React.memo(About)
+export default React.memo(About, (prevProps, nextProps) => {
+   return prevProps.str.id === nextProps.str.id 
+})
