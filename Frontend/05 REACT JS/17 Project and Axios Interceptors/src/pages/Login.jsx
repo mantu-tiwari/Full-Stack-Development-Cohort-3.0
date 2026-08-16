@@ -2,8 +2,8 @@ import React from "react";
 import { useAuth } from "../hooks/useAuth";
 
 const Login = () => {
-
-  const {register, handleSubmit, loginFormSubmit, reset,errors,navigate} = useAuth()
+  const { register, handleSubmit, loginFormSubmit, reset, errors, navigate } =
+    useAuth();
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4">

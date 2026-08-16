@@ -1,30 +1,15 @@
 import React from "react";
 import { useAuth } from "../hooks/useAuth";
-// import { useNavigate } from "react-router";
-// import { useForm } from "react-hook-form";
-// import { AuthShop } from "../context/AuthContext";
-// import toast from "react-hot-toast";
 
 const Register = () => {
-
-    const {register, handleSubmit, registerFormSubmit, reset,errors, navigate} = useAuth()
-  
-  // const navigate = useNavigate();
-  // const {registrationData,setRegistrationData} = useContext(AuthShop)
-  // const {
-  //   register,
-  //   handleSubmit,
-  //   reset,
-  //   formState: { errors },
-  // } = useForm();
-
-  // const formSubmit = (data) => {
-  //   const arr = [...registrationData, data]
-  //     setRegistrationData(arr)
-  //     toast.success('Registered Successfully')
-  //   localStorage.setItem('registeredUser', JSON.stringify(arr))
-  //     reset()
-  // }
+  const {
+    register,
+    handleSubmit,
+    registerFormSubmit,
+    reset,
+    errors,
+    navigate,
+  } = useAuth();
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4">
@@ -42,14 +27,16 @@ const Register = () => {
               Name
             </label>
             <input
-            {...register('name',{
-                required: 'Name is required'
-            })}
+              {...register("name", {
+                required: "Name is required",
+              })}
               type="text"
               className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm"
               placeholder="Enter your name"
             />
-            {errors.name && <p className="text-red-600" >{errors.name.message}</p>}
+            {errors.name && (
+              <p className="text-red-600">{errors.name.message}</p>
+            )}
           </div>
 
           {/* Email */}
@@ -58,14 +45,16 @@ const Register = () => {
               Email
             </label>
             <input
-            {...register('email', {
-                required: 'Email is required'
-            })}
+              {...register("email", {
+                required: "Email is required",
+              })}
               type="email"
               className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm"
               placeholder="Enter your email"
             />
-            {errors.email && <p className="text-red-600" >{errors.email.message}</p>}
+            {errors.email && (
+              <p className="text-red-600">{errors.email.message}</p>
+            )}
           </div>
 
           {/* Password */}
@@ -74,18 +63,20 @@ const Register = () => {
               Password
             </label>
             <input
-            {...register('password', {
-                required: 'password is required',
+              {...register("password", {
+                required: "password is required",
                 minLength: {
-                    value: 6, 
-                    message: 'Minimun 6 digit is required'
-                }
-            })}
+                  value: 6,
+                  message: "Minimun 6 digit is required",
+                },
+              })}
               type="password"
               className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm"
               placeholder="Create a password"
             />
-            {errors.password && <p className="text-red-600" >{errors.password.message}</p>}
+            {errors.password && (
+              <p className="text-red-600">{errors.password.message}</p>
+            )}
           </div>
 
           {/* Submit Button */}
