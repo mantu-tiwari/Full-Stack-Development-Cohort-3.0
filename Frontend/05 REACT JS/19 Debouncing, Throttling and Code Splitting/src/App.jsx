@@ -5,6 +5,7 @@ import axios from "axios";
 const App = () => {
   const [productData, setProductData] = useState([]);
   const [searchData, setSearchData] = useState(null);
+  let throttle = false;
   // console.log(productData);
   // console.log(searchData);
 
@@ -34,8 +35,22 @@ const App = () => {
     let timeout = setTimeout(() => {
       filteredData();
     }, 700);
-    return () => clearTimeout(timeout) // ye tab chalega jab new aayega or purana jayega
+    return () => clearTimeout(timeout); // ye tab chalega jab new aayega or purana jayega
   }, [searchData]);
+
+  // Throttling logic code
+  let handleScroll = () => {
+    if (throttle) return;
+    console.log("scrolling.....");
+    throttle = true;
+    setTimeout(() => {
+      throttle = false;
+    }, 4000);
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll) // this prevent from memry leakage
+  }, []);
 
   return (
     <div className="p-4">
@@ -51,8 +66,7 @@ const App = () => {
         {productData.map((e) => {
           return (
             <h1 key={e.id}>
-              {" "}
-              {e.id}. {e.title}{" "}
+              {e.id}. {e.title}
             </h1>
           );
         })}
