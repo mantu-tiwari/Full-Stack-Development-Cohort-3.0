@@ -8,49 +8,63 @@ import Home from "../pages/Home";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { addUser } from "../features/authSlice";
+import PublicProtected from "./protected/PublicProtected";
+import MainProtected from "./protected/MainProtected";
 
 const AppRoutes = () => {
+  let dispatch = useDispatch();
 
-  let dispatch = useDispatch()
-  
   // hydrate user function
   let hydrateUser = () => {
-    console.log('Hydrate user is calling.....');
-      let loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'))
-      if(!loggedInUser){
-        toast.error('unAutharized user')
-        return
-      }
-      dispatch(addUser(loggedInUser))
-  }
+    console.log("Hydrate user is calling.....");
+    let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+    if (!loggedInUser) {
+      toast.error("unAutharized user");
+      return;
+    }
+    dispatch(addUser(loggedInUser));
+  };
   useEffect(() => {
-      hydrateUser()
-  },[])
+    hydrateUser();
+  }, []);
 
   let router = createBrowserRouter([
     {
       path: "/",
-      element: <AuthLayout />,
+      element: <PublicProtected />,
       children: [
         {
           path: "",
-          element: <Login />,
-        },
-        {
-          path: "register",
-          element: <Register />,
+          element: <AuthLayout />,
+          children: [
+            {
+              path: "",
+              element: <Login />,
+            },
+            {
+              path: "register",
+              element: <Register />,
+            },
+          ],
         },
       ],
     },
     {
       path: "/main",
-      element: <MainLayout />,
+      element: <MainProtected/>,
       children: [
         {
-          path: "",
-          element: <Home />,
-        },
-      ],
+          path: '',
+          element: <MainLayout/>,
+          children: [
+            {
+              path: '',
+              element: <Home/>
+            }
+          ]
+        }
+      ]
+      
     },
   ]);
 
