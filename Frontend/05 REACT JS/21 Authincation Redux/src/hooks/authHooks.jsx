@@ -24,8 +24,12 @@ export const useAuth = () => {
       return e.email === data.email && e.password === data.password;
     });
     reset();
-    if (!user) return toast.error("Invalid Credential");
+    if (!user) {
+      toast.error("Invalid Credential");
+      return;
+    }
     dispatch(addUser(user));
+    localStorage.setItem('loggedInUser', JSON.stringify(user))
     toast.success("Loggin Successully");
   };
 
