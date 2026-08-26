@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { addUser } from "../features/authSlice";
 
 export const useAuth = () => {
   const [registeredData, setRegisteredData] = useState(
@@ -9,6 +11,7 @@ export const useAuth = () => {
   );
   console.log(registeredData);
   let navigate = useNavigate();
+  let dispatch = useDispatch()
   let {
     register,
     reset,
@@ -24,6 +27,8 @@ export const useAuth = () => {
       toast.error("Invalid User");
       return;
     }
+    dispatch(addUser(loginData))
+    localStorage.setItem('loginData', JSON.stringify(loginData))
     toast.success("logged In Successfully");
     reset();
   };
