@@ -5,12 +5,11 @@ import { assignNum, decrement, increment } from '../features/counterSlice'
 
 const About = () => {
     const dispatch = useDispatch()
-    const data= useSelector((store) => store.counter)
-    console.log(data);
+    const {count}= useSelector((store) => store.counter)
   return (
     <div>
       <h1>this is about</h1>
-      <h1>count is : {} </h1>
+      <h1>count is : {count} </h1>
       <button onClick={() => {
           dispatch(decrement())
         }}> Decrement</button>

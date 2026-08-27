@@ -4,11 +4,11 @@ import Navbar from '../components/Navbar'
 
 const MainLayout = () => {
   return (
-    <div>
+    <div className='bg-secondary min-h-screen'>
       <nav>
         <Navbar/>
       </nav>
-      <main>
+      <main className='p-8'>
         <Outlet/>
       </main>
     </div>
