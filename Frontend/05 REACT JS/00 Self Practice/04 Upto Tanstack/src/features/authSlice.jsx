@@ -12,10 +12,11 @@ const authSlice = createSlice({
       state.isAuthincated = true;
     },
     removeUser: (state) => {
-      ((state.user = null), (state.isAuthincated = false));
-    },
+        state.user = null,
+        state.isAuthincated = false
+    }
   },
 });
 
-export const {addUser, removeUser} = authSlice.actions
-export default authSlice.reducer
+export const { addUser, removeUser } = authSlice.actions;
+export default authSlice.reducer;

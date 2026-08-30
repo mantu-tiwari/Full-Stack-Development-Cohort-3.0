@@ -4,7 +4,7 @@ import { Outlet } from 'react-router'
 
 const MainLayout = () => {
   return (
-    <div>
+    <div className='bg-gray-300 min-h-screen'>
       <nav>
         <Navbar/>
       </nav>
