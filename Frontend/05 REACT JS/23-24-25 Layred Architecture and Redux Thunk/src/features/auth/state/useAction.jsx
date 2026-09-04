@@ -4,7 +4,7 @@ import { api } from "../../../config/api";
 // credential = data and thunkApi = error
 
 export const loginUserAction = createAsyncThunk(
-  "auth/login",
+  "/auth/login",
   async (credential, thunkApi) => {
     try {
       let res = await api.post("/auth/login", credential);
