@@ -1,21 +1,25 @@
 import { useQuery } from "@tanstack/react-query";
-import { getProductCategory, productApi } from "../api/productApi";
+import {
+  getProductByCategory,
+  getProductCategory,
+  productApi,
+} from "../api/productApi";
 import { useEffect, useState } from "react";
 
 export const useAllProduct = () => {
   const [search, setSearch] = useState(null);
-  const [debounceSearch, setDebounceSearch] = useState(null)
+  const [debounceSearch, setDebounceSearch] = useState(null);
 
   // debounce login
   useEffect(() => {
     let timeout = setTimeout(() => {
-      setDebounceSearch(search)
+      setDebounceSearch(search);
     }, 1000);
-      return ()=> clearTimeout(timeout)
-  },[search])
+    return () => clearTimeout(timeout);
+  }, [search]);
 
   let { data, isPending, error } = useQuery({
-    queryKey: ['product', debounceSearch],
+    queryKey: ["product", debounceSearch],
     queryFn: () => productApi(debounceSearch),
   });
 
@@ -24,7 +28,8 @@ export const useAllProduct = () => {
     data,
     isPending,
     error,
-    setSearch, search
+    setSearch,
+    search,
   };
 };
 
@@ -37,5 +42,22 @@ export const useAllCategory = () => {
     data,
     isPending,
     error,
+  };
+};
+
+export const useProductByCategory = () => {
+  const [category, setCategory] = useState(null);
+  console.log("ye category hai ", category);
+
+  let { data, isPending, error } = useQuery({
+    queryKey: ["productByCategory", category],
+    queryFn: () => getProductByCategory(category),
+  });
+  return {
+    data,
+    isPending,
+    error,
+    category,
+    setCategory,
   };
 };

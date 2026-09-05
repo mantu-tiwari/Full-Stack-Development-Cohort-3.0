@@ -1,6 +1,6 @@
 import { useAllCategory } from '../../hooks/productHooks'
 
-const Filter = ({search, setSearch}) => {
+const Filter = ({search, setSearch, category, setCategory}) => {
 console.log(search);
 
     let {data, isPending, error} = useAllCategory()
@@ -42,6 +42,10 @@ console.log(search);
       {/* Category Dropdown (Right) */}
       <div className="w-full sm:w-auto">
         <select
+        value={category}
+        onChange={(e) => {
+            setCategory(e.target.value)
+        }}
           className="w-35 rounded-lg border p-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 capitalize"
         >
           <option value="all">All Categories</option>

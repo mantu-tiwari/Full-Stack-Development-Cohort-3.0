@@ -21,3 +21,13 @@ export const getProductCategory = async () => {
         console.log('product category error is ', error);
     }
 }
+
+
+export const getProductByCategory = async (category) => {
+    try {
+        let res = await api.get(`/products/category/${category}`)
+        return res.data
+    } catch (error) {
+        console.log('product category error is ', error);
+    }
+}
