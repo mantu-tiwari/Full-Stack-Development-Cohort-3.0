@@ -1,8 +1,10 @@
 import { api } from "../../../config/api";
 
-export const productApi  = async () => {
+export const productApi  = async (search) => {
     try {
-        let res = await api.get('/products')
+        // this is use for showing all product by default
+        let url = search ? `/products/search?q=${search}` : '/products'
+        let res = await api.get(url)
         // console.log(res);
         return res.data.products
     } catch (error) {

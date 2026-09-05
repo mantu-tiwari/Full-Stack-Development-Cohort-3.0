@@ -1,7 +1,7 @@
-import React from 'react'
 import { useAllCategory } from '../../hooks/productHooks'
 
-const Filter = () => {
+const Filter = ({search, setSearch}) => {
+console.log(search);
 
     let {data, isPending, error} = useAllCategory()
     // let categories = ['Grocery' , 'Beauty', 'Eletronics']
@@ -15,6 +15,10 @@ const Filter = () => {
       {/* Search Bar (Left) */}
       <div className="relative w-full sm:max-w-xs">
         <input
+        value={search}
+        onChange={(e) => {
+            setSearch(e.target.value)
+        }}
           type="text"
           placeholder="Search products..."
           className="w-full rounded-lg border p-2 pl-8 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
