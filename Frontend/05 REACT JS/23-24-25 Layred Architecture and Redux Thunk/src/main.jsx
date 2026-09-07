@@ -15,6 +15,5 @@ createRoot(document.getElementById("root")).render(
       <AppRoutes />
       <ToastContainer />
     </Provider>
-    ,
-  </QueryClientProvider>,
+  </QueryClientProvider>
 );
