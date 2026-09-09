@@ -5,11 +5,19 @@ import ProductCardSkelton from "./components/ProductCardSkelton";
 
 const App = () => {
   const [productData, setProductData] = useState(null);
+  const [page, setPage] = useState(0);
+  let limit = 10;
+  let totalPage = Math.ceil(productData?.total / limit);
+  console.log(totalPage);
+  console.log(page);
+
   console.log("product data -->", productData);
 
   const getProductData = async () => {
     try {
-      let res = await axios.get("https://dummyjson.com/products?limit=10");
+      let res = await axios.get(
+        `https://dummyjson.com/products?limit=${limit}&skip=${page * limit}`,
+      );
       setProductData(res.data);
     } catch (error) {
       console.log("product data api error ", error);
@@ -17,7 +25,7 @@ const App = () => {
   };
   useEffect(() => {
     getProductData();
-  }, []);
+  }, [page]);
 
   return (
     <div>
@@ -31,11 +39,25 @@ const App = () => {
             ))}
       </div>
       <div className="flex gap-4 justify-center items-center p-8">
-        <button className="bg-gray-900 rounded-lg border border-gray-200 px-4 py-2 text-sm font-medium text-white transition hover:bg-purple-600">
+        <button
+          disabled={page === 0}
+          onClick={() => {
+            setPage(page - 1);
+          }}
+          className=" cursor-pointer bg-gray-900 rounded-lg border border-gray-200 px-4 py-2 text-sm font-medium text-white transition hover:bg-purple-600"
+        >
           Previous
         </button>
-        <p>Number</p>
-        <button className="rounded-lg border border-gray-200 px-4 py-2 text-sm font-medium text-white bg-gray-900 transition hover:bg-purple-600">
+        <p>
+          {page + 1} of {totalPage}
+        </p>
+        <button
+          disabled={page >= totalPage - 1}
+          onClick={() => {
+            setPage(page + 1);
+          }}
+          className=" cursor-pointer rounded-lg border border-gray-200 px-4 py-2 text-sm font-medium text-white bg-gray-900 transition hover:bg-purple-600"
+        >
           Next
         </button>
       </div>
