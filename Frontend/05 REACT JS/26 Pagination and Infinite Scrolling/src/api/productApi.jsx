@@ -1,5 +1,6 @@
-import axios from "axios";
+// for Tanstack.jsx file
 
+import axios from "axios";
 export const getProduct = async (limit, page) => {
   try {
     console.log('api is rendering');
