@@ -7,7 +7,8 @@ const ProductCard = ({ product }) => {
         {/* Product Image */}
         <div className="relative aspect-square w-full overflow-hidden bg-gray-50 p-6">
           <img
-            src={product.image}
+            // src={product.image}
+            src={product.images[0]}
             alt={product.title}
             className="h-full w-full object-contain transition duration-300 hover:scale-105"
           />

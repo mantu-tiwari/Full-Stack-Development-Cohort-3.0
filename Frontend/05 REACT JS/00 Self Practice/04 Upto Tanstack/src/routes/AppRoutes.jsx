@@ -56,11 +56,11 @@ const AppRoutes = () => {
           element: <MainLayout />,
           children: [
             {
-              path: "",
+              path: "shop",
               element: <Home />,
             },
             {
-              path: "shop",
+              path: "",
               element: <Shop />,
             },
             {

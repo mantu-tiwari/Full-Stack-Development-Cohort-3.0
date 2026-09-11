@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
 import { getProductData } from "../api/productApi"
+import { getDummyData } from "../api/dummyProduct"
 
 export const useProductApi = () => {
     const {isPending, data, error} = useQuery({
@@ -10,4 +11,14 @@ export const useProductApi = () => {
   return{
     isPending, data, error
   }
+}
+
+export const useDummyProduct = () => {
+    const {data, isPending, error} = useQuery({
+      queryKey: ['dummyProduct'],
+      queryFn: getDummyData
+    })
+    return{
+      data, isPending, error
+    }
 }
