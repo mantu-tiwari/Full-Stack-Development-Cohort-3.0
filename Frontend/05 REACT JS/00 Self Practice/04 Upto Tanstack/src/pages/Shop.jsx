@@ -9,6 +9,8 @@ const Shop = () => {
   const {
     data: dummyData,
     isPending: dummyPending,
+    fetchNextPage,
+    allProduct
   } = useDummyProduct();
 
   console.log("dummy data", dummyData);
@@ -33,12 +35,14 @@ const Shop = () => {
           ? Array.from({ length: 10 }).map((_, index) => (
               <SkeletonProductCard key={index} />
             ))
-          : dummyData?.products?.map((e) => {
+          : allProduct.map((e) => {
               return <ProductCard key={e.id} product={e} />;
             })}
       </div>
       <div className="flex items-center justify-center p-4">
-        <button className=" cursor-pointer p-2 border rounded-lg ">
+        <button onClick={() => {
+            fetchNextPage()
+        }} className=" cursor-pointer p-2 border rounded-lg ">
           Load More
         </button>
       </div>
