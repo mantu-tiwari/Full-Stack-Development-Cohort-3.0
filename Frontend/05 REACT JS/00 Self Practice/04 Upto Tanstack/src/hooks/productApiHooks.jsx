@@ -1,6 +1,7 @@
-import { useQuery } from "@tanstack/react-query"
+import { useQuery, useInfiniteQuery } from "@tanstack/react-query"
 import { getProductData } from "../api/productApi"
 import { getDummyData } from "../api/dummyProduct"
+
 
 export const useProductApi = () => {
     const {isPending, data, error} = useQuery({
@@ -13,12 +14,20 @@ export const useProductApi = () => {
   }
 }
 
+
 export const useDummyProduct = () => {
-    const {data, isPending, error} = useQuery({
-      queryKey: ['dummyProduct'],
-      queryFn: getDummyData
-    })
-    return{
+  let limit = 10
+  let {data, isPending, error} = useInfiniteQuery({
+    queryKey: ['dummyData'],
+    queryFn: ({pageParam}) => getDummyData(limit, pageParam),
+    initialPageParam: 0,
+    getNextPageParam: (lastPage, allPage) => {
+        console.log('lastpage',lastPage);
+        console.log('allpage',allPage);
+    }
+  })
+  
+  return{
       data, isPending, error
     }
 }

@@ -5,13 +5,15 @@ import { getProductData } from "../api/productApi";
 import { useDummyProduct, useProductApi } from "../hooks/productApiHooks";
 
 const Shop = () => {
+  const { isPending, data, error } = useProductApi();
+  const {
+    data: dummyData,
+    isPending: dummyPending,
+  } = useDummyProduct();
 
-  const {isPending, data, error} = useProductApi()
-  const {data: dummyData} = useDummyProduct()
+  console.log("dummy data", dummyData);
+  if (error) return <h1>{error.message}</h1>;
 
-  console.log('dummy data', dummyData);
-  if(error) return <h1>{error.message}</h1>
-  
   return (
     <div>
       {/* data from fake store */}
@@ -27,16 +29,18 @@ const Shop = () => {
 
       {/* data from dummy json */}
       <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-4">
-        {isPending
+        {dummyPending
           ? Array.from({ length: 10 }).map((_, index) => (
               <SkeletonProductCard key={index} />
             ))
-          : dummyData.products.map((e) => {
-              return <ProductCard key={e.id} product={e} />
-          })}
+          : dummyData?.products?.map((e) => {
+              return <ProductCard key={e.id} product={e} />;
+            })}
       </div>
       <div className="flex items-center justify-center p-4">
-        <button className=" cursor-pointer p-2 border rounded-lg ">Load More</button>
+        <button className=" cursor-pointer p-2 border rounded-lg ">
+          Load More
+        </button>
       </div>
     </div>
   );
