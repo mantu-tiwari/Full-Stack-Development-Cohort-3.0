@@ -9,6 +9,40 @@ let userData = {
         city: "meerut",
     },
 };
-userData.name = 'tejshwi';
+userData.name = "tejshwi";
 console.log(userData);
+// Function
+// void me tum kuch return nhi kar sakte ho
+let add = (a, b) => {
+    return a + b;
+};
+let ans = add(34, 34);
+// console.log(ans);
+let cb = (x, y) => {
+    y(); // y is a function that's why we can call y here
+    return x;
+};
+let res = cb(34, () => { });
+console.log(res);
+// Infinite loop question (doubt) currying
+let sum = (num1) => {
+    return (num2) => {
+        if (num2 !== undefined) {
+            return sum(num1 + num2);
+        }
+        return num1;
+    };
+};
+let data = sum(23)(45)();
+console.log(data);
+// sum of number using rest parameter
+let jor = (...rest) => {
+    let data = rest.reduce((a, v) => {
+        return a + v;
+    }, 0);
+    return data;
+};
+let result = jor(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+console.log('rest parameter result', result);
+// alag se type banane ko type alias kehate hai
 //# sourceMappingURL=index.js.map
