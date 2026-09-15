@@ -45,8 +45,8 @@ let sum = (num1: number) => {
     return num1;
   };
 };
-let data = sum(23)(45)();
-console.log(data);
+// let data = sum(23)(45)();
+// console.log(data);
 
 // sum of number using rest parameter
 let jor = (...rest : number[]) :number => {

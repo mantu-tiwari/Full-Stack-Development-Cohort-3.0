@@ -33,8 +33,8 @@ let sum = (num1) => {
         return num1;
     };
 };
-let data = sum(23)(45)();
-console.log(data);
+// let data = sum(23)(45)();
+// console.log(data);
 // sum of number using rest parameter
 let jor = (...rest) => {
     let data = rest.reduce((a, v) => {
