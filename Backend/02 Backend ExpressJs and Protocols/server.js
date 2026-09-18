@@ -43,6 +43,8 @@
 // creating api using express
 const express = require("express");
 const app = express();
+// middleware for accepting data from frontend
+app.use(express.json())
 let port = 300;
 app.get("/", (req, res) => {
   res.send("yo yo");
@@ -321,7 +323,11 @@ app.get("/product", (req, res) => {
     },
   ]);
 });
+app.post('/create', (req, res) => {
+    console.log(req.body);
+    res.send('ok post')
+})
 
 app.listen(port, () => {
-  console.log("i am inside the port");
+  console.log("i am inside port");
 });
