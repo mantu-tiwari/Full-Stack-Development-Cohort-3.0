@@ -325,7 +325,7 @@ app.get("/product", (req, res) => {
 });
 app.post('/create', (req, res) => {
     console.log(req.body);
-    res.send('ok post')
+    res.send('ok created')
 })
 
 app.listen(port, () => {
