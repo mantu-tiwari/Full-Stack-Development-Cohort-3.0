@@ -32,6 +32,21 @@ app.post('/create', (req, res) => {
     res.send('User Saved Successfully')
 })
 
+// Update
+app.put('/update/:id', (req, res) => {
+
+    let {id} = req.params
+    let {city} = req.body
+    // console.log('req.param ->',id);
+    // console.log('req.body ->',name);
+    // console.log('update');
+    let updateUser = user.map((e) => {
+        return e.id === id ? {...e, city} : e
+    })
+    res.send(updateUser)
+    // res.send('update hone wla hai')
+})
+
 // Delete
 app.delete('/delete/:id', (req,res) => {
     let {id} = req.params
