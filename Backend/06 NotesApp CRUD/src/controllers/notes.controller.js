@@ -8,12 +8,27 @@ const createNotesController = async (req, res) => {
       description,
     });
     return res.status(201).json({
-        message: "notes created successfully",
-        data : newNote
-    })
+      message: "notes created successfully",
+      data: newNote,
+    });
   } catch (error) {
     console.log("error in creation", error);
   }
-}
+};
 
-module.exports = createNotesController
+const getAllNotesController = async (req, res) => {
+  try {
+    let allNotes = await NotesModel.find();
+    res.status(200).json({
+      message: "all notes fetched",
+      data: allNotes,
+    });
+  } catch (error) {
+    console.log("get all notes error", error);
+  }
+};
+
+module.exports = {
+  createNotesController,
+  getAllNotesController,
+};
