@@ -1,6 +1,8 @@
 const express = require("express");
 const NotesModel = require("./models/notes.model");
 const connectDb = require("./config/db");
+const createNotesController = require("./controllers/notes.controller");
+const notesRoutes = require('./routes/notes.route')
 const app = express();
 app.use(express.json()); // middleware
 
@@ -10,20 +12,6 @@ app.get("/", (req, res) => {
   res.send("hello");
 });
 
-app.post("/create", async (req, res) => {
-  try {
-    let { title, description } = req.body;
-    let newNote = await NotesModel.create({
-      title,
-      description,
-    });
-    return res.status(201).json({
-        message: "notes created successfully",
-        data : newNote
-    })
-  } catch (error) {
-    console.log("error in creation", error);
-  }
-});
+app.use('/notes', notesRoutes ) // import route from routes
 
 module.exports = app;
