@@ -1,3 +1,4 @@
+require('dotenv').config()
 // this will fix the network ip isssue 
 const dns = require('dns')
 dns.setServers(["8.8.8.8", "1.1.1.1"])
