@@ -1,9 +1,15 @@
-const express = require('express')
-const app = express()
+const express = require("express");
+const app = express();
+const notesRoutes = require("./routes/notes.routes");
+const connectDatabase = require("./config/db");
+app.use(express.json());
 
-app.get('/', (req, res) => {
-    console.log('testing');
-    res.send('testing')
-})
+connectDatabase()
 
-module.exports = app
+app.get("/", (req, res) => {
+  res.send("testing");
+});
+
+app.use("/notes", notesRoutes);
+
+module.exports = app;
