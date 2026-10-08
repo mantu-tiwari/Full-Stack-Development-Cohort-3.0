@@ -4,7 +4,7 @@ const notesRoutes = require("./routes/notes.routes");
 const connectDatabase = require("./config/db");
 app.use(express.json());
 
-connectDatabase()
+connectDatabase();
 
 app.get("/", (req, res) => {
   res.send("testing");
