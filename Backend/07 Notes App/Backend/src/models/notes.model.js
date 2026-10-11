@@ -10,7 +10,7 @@ const notesSchema = new mongoose.Schema({
     required: true,
     minLength: [10, "minmium 10 digit is required"],
   },
-});
+})
 
 const NotesModel = mongoose.model("notesData", notesSchema);
 
