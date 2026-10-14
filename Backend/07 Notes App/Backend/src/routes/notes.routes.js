@@ -4,4 +4,4 @@ const router = express.Router();
 
 router.post("/create", createNotesController);
 
-module.exports = router;
+module.exports = router
