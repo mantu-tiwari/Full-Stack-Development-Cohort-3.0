@@ -7,7 +7,7 @@ app.use(express.json());
 connectDatabase();
 
 app.get("/", (req, res) => {
-  res.send("testing");
+  res.send("testing")
 });
 
 app.use("/notes", notesRoutes);
