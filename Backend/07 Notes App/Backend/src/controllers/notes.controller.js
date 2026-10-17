@@ -9,7 +9,7 @@ const createNotesController = async (req, res) => {
     });
     res.status(201).json({
       message: "notes created successfully",
-      data: newNotes,
+      data: newNotes, 
     });
   } catch (error) {
     console.log('error in creating data', error);
