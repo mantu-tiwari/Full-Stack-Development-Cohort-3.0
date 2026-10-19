@@ -16,4 +16,4 @@ const createNotesController = async (req, res) => {
   }
 }
 
-module.exports = createNotesController;
+module.exports = createNotesController
