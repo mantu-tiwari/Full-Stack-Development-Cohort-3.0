@@ -10,6 +10,6 @@ app.get("/", (req, res) => {
   res.send("testing");
 });
 
-app.use("/notes", notesRoutes);
+app.use("/notes", notesRoutes)
 
 module.exports = app;
